@@ -1,0 +1,35 @@
+/* GENERAL */
+// Styling rules for the basic parts of the page. These rules affect the entire site.
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.9);
+}
+
+// Pseudo classes to declare commonly used styling rules for different elements.
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%stretch {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%inline-block {
+  display: inline-block;
+}
+
+// Styling rules for the main container.
+.container {
+  @include bg($white);
+}

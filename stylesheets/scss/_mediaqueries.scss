@@ -1,0 +1,25 @@
+@media (max-width: 790px) {
+  .content-box {
+    margin-left: 0;
+    margin-right: 0;
+
+    .content-formatted,
+    #editor {
+      padding: 0 20px;
+      width: auto;
+    }
+
+    .toolbar {
+      width: 100%;
+    }
+  }
+
+  .content-bottom {
+    .content-left {
+      margin-bottom: 20px;
+    }
+    .content-formatted .supported {
+      padding-top: 50px;
+    }
+  }
+}

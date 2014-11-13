@@ -1,0 +1,238 @@
+{
+  "description": "The basic developer's template",
+  "name": "Pripyat",
+  "preview_medium": "",
+  "preview_small": "",
+  "author": "Tõnu Runnel",
+  "layouts": [
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl",
+      "layout_name": "page_front",
+      "title": "Front page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/placeholder.tpl",
+      "layout_name": "page_default",
+      "title": "Placeholder"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/content-bottom.tpl",
+      "layout_name": "content-bottom",
+      "title": "content-bottom"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/content-middle.tpl",
+      "layout_name": "content-middle",
+      "title": "content-middle"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/content-top.tpl",
+      "layout_name": "content-top",
+      "title": "content-top"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/editor-content.tpl",
+      "layout_name": "editor-content",
+      "title": "editor-content"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/editor-toolbar.tpl",
+      "layout_name": "editor-toolbar",
+      "title": "editor-toolbar"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/header.tpl",
+      "layout_name": "header",
+      "title": "header"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/html-head.tpl",
+      "layout_name": "html-head",
+      "title": "html-head"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/javascripts.tpl",
+      "layout_name": "javascripts",
+      "title": "javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/open-graph.tpl",
+      "layout_name": "open-graph",
+      "title": "open-graph"
+    }
+  ],
+  "assets": [
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags.svg",
+      "kind": "assets",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "application/x-wais-source",
+      "file": "assets/src",
+      "kind": "assets",
+      "filename": "src"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/chrome.png",
+      "kind": "images",
+      "filename": "chrome.png"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/content-top-bg.jpg",
+      "kind": "images",
+      "filename": "content-top-bg.jpg"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/firefox.png",
+      "kind": "images",
+      "filename": "firefox.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/github-logo-yellow.png",
+      "kind": "images",
+      "filename": "github-logo-yellow.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/github-logo.png",
+      "kind": "images",
+      "filename": "github-logo.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ico-flags.png",
+      "kind": "images",
+      "filename": "ico-flags.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ie.png",
+      "kind": "images",
+      "filename": "ie.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/logo-bottom.png",
+      "kind": "images",
+      "filename": "logo-bottom.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/logo-middle.png",
+      "kind": "images",
+      "filename": "logo-middle.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/github-logo.png",
+      "kind": "images",
+      "filename": "github-logo.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/mobile.png",
+      "kind": "images",
+      "filename": "mobile.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/opera.png",
+      "kind": "images",
+      "filename": "opera.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/safari.png",
+      "kind": "images",
+      "filename": "safari.png"
+    },
+    {
+      "content_type": "application/x-wais-source",
+      "file": "assets/src",
+      "kind": "assets",
+      "filename": "src"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/application.js",
+      "kind": "javascripts",
+      "filename": "application.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/application.min.js",
+      "kind": "javascripts",
+      "filename": "application.min.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/modernizr.js",
+      "kind": "javascripts",
+      "filename": "modernizr.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/modernizr.min.js",
+      "kind": "javascripts",
+      "filename": "modernizr.min.js"
+    },
+    {
+      "content_type": "application/x-wais-source",
+      "file": "assets/src",
+      "kind": "assets",
+      "filename": "src"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/main.css",
+      "kind": "stylesheets",
+      "filename": "main.css"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "stylesheets/main.css.map",
+      "kind": "stylesheets",
+      "filename": "main.css.map"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/main.min.css",
+      "kind": "stylesheets",
+      "filename": "main.min.css"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "stylesheets/scss",
+      "kind": "stylesheets",
+      "filename": "scss"
+    }
+  ]
+}

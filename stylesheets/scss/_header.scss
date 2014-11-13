@@ -1,0 +1,61 @@
+.header {
+  @extend %clearfix;
+
+  .logo {
+    padding: 20px 0 20px 20px;
+    height: 40px;
+    float: left;
+
+    .logo-container {
+      background-image: url('/images/logo.png');
+      background-repeat: no-repeat;
+      background-size: 142px 40px;
+      width: 142px;
+      height: 40px;
+    }
+  }
+
+  .gh {
+    padding: 20px 10px 20px 0;
+    height: 40px;
+    position: relative;
+    float: right;
+
+    .fork-text {
+      font-family: 'Avenir Next', 'Helvetica', sans-serif;
+      color: #1b2124;
+      font-size: 0.65em;
+      max-width: 55px;
+      padding: 0 10px 5px 0;
+      text-align: right;
+      float: left;
+    }
+
+    .gh-logo-container {
+      float: right;
+      padding: 7px 0;
+      background-image: url('/images/github-logo.png');
+      background-repeat: no-repeat;
+      background-size: 26px 26px;
+      background-position-y: 50%;
+      height: 26px;
+      width: 26px;
+    }
+  }
+}
+
+.content-middle .logo .logo-container {
+  background-image: url('/images/logo-middle.png');
+}
+
+.content-bottom .logo .logo-container {
+  background-image: url('/images/logo-bottom.png');
+}
+
+.content-bottom .gh .gh-logo-container {
+  background-image: url('/images/github-logo-yellow.png');
+}
+
+.content-bottom .gh .fork-text {
+  color: white;
+}

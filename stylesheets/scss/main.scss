@@ -1,0 +1,13 @@
+// MAIN STYLESHEET
+// Uncomment the partials you want to use in your template and comment out those that you don't need.
+
+@import 'bourbon/bourbon';
+@import '_mixins';
+@import '_mixins-flexbox';
+@import '_variables';
+@import '_general';
+@import '_content-formatted';
+@import '_header';
+@import '_content';
+@import '_editor';
+@import '_mediaqueries';
