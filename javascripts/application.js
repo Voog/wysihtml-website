@@ -20261,7 +20261,9 @@ var wysihtml5ParserRules = {
             "remove_action": "unwrap",
             "keep_styles": {
                 "textAlign": 1,
-                "float": 1
+                "float": 1,
+                "fontSize": 1,
+                "color": 1
             },
             "add_class": {
                 "align": "align_text"

@@ -7,20 +7,11 @@
 <body {% if editmode %}class="editmode"{% endif %}>
   <main class="container" role="main">
 
-    <section class="content-box content-top">
-      {% include "header" %}
-      {% include "content-top" %}
-    </section>
-
     <section class="content-box content-middle">
       {% include "header" %}
-      {% include "content-middle" %}
-    </section>
-
-    <section class="content-box content-bottom">
-      {% include "bg-video" %}
-      {% include "header" %}
-      {% include "content-bottom" %}
+      <section class="content-formatted">
+        {% content %}
+      </section>
     </section>
   </main>
 

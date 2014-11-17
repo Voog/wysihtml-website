@@ -2,60 +2,114 @@
   @extend %clearfix;
 
   .logo {
-    padding: 20px 0 20px 20px;
-    height: 40px;
+    position: relative;
     float: left;
+    width: 142px;
+    height: 40px;
+    padding: 20px 0 20px 20px;
+    text-decoration: none;
 
-    .logo-container {
-      background-image: url('/images/logo.png');
-      background-repeat: no-repeat;
-      background-size: 142px 40px;
-      width: 142px;
-      height: 40px;
+    .text,
+    .dot {
+      font-family: 'Avenir Next', 'Helvetica', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1em;
+    }
+
+    .text-smaller {
+      position: absolute;
+      right: 8px;
+      bottom: 23px;
+      font-family: 'Georgia', serif;
+      font-size: 11px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 1em;
     }
   }
 
   .gh {
-    padding: 20px 10px 20px 0;
-    height: 40px;
     position: relative;
     float: right;
+    height: 40px;
+    padding: 20px 10px 20px 0;
 
     .fork-text {
-      font-family: 'Avenir Next', 'Helvetica', sans-serif;
-      color: #1b2124;
-      font-size: 0.65em;
-      max-width: 55px;
-      padding: 0 10px 5px 0;
-      text-align: right;
       float: left;
+      max-width: 55px;
+      padding: 5px 10px 5px 0;
+      font-family: 'Avenir Next', 'Helvetica', sans-serif;
+      font-size: .65em;
+      color: #1b2124;
+      text-align: right;
     }
 
     .gh-logo-container {
       float: right;
+      width: 26px;
+      height: 26px;
       padding: 7px 0;
       background-image: url('/images/github-logo.png');
       background-repeat: no-repeat;
       background-size: 26px 26px;
       background-position-y: 50%;
-      height: 26px;
-      width: 26px;
     }
   }
 }
 
-.content-middle .logo .logo-container {
-  background-image: url('/images/logo-middle.png');
+.content-top {
+  .logo {
+    .text {
+      color: #1b2124;
+    }
+
+    .dot {
+      color: #00a2ff;
+    }
+
+    .text-smaller {
+      color: #fff9c5;
+    }
+  }
 }
 
-.content-bottom .logo .logo-container {
-  background-image: url('/images/logo-bottom.png');
+.content-middle {
+  .logo {
+    .text {
+      color: #1b2124;
+    }
+
+    .dot {
+      color: #1ca2ff;
+    }
+
+    .text-smaller {
+      color: #85d8f8;
+    }
+  }
+}
+
+.content-bottom {
+  .logo {
+    .text {
+      color: #fff;
+    }
+
+    .dot {
+      color: #85d8f8;
+    }
+
+    .text-smaller {
+      color: #fff9c5;
+    }
+  }
+}
+
+.content-bottom .gh .fork-text {
+  color: #fff;
 }
 
 .content-bottom .gh .gh-logo-container {
   background-image: url('/images/github-logo-yellow.png');
-}
-
-.content-bottom .gh .fork-text {
-  color: white;
 }

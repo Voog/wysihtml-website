@@ -1,26 +1,27 @@
 .content-box {
+  display: block;
   width: 100%;
   min-height: 700px;
-  display: block;
+  padding-bottom: 20px;
   background-size: cover;
 
   .content-formatted {
-    max-width: 640px;
     width: 100%;
+    max-width: 640px;
     margin: 40px auto 0;
   }
 }
 
 .content-top {
-  background-image: url('/images/content-top-bg.jpg');
   background-color: #85d8f8;
+  background-image: url('/images/content-top-bg.jpg');
+  background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 100% 50%;
 }
 
 .content-middle {
-  background-color: white;
+  background-color: #fff;
 
   .content-formatted {
     width: 100%;
@@ -29,9 +30,58 @@
 }
 
 .content-bottom {
-  background-color: #1c2123;
-  color: rgba(255,255,255,.5);
   position: relative;
+  color: rgba(255,255,255,.5);
+  background-color: #1c2123;
+
+  #frontpage-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+
+    .video-overlay,
+    .video-placeholder-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+    }
+
+    .video-overlay {
+      background-color: rgba(0,0,0,.8);
+    }
+
+    .video-placeholder-container {
+      @include query($tablet-2) {
+        background: url('/images/video-placeholder.png') no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    video {
+      @include query($tablet-2) {
+        display: none !important;
+      }
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      background-size: cover;
+    }
+  }
 
   .edy-empty-bordered {
     color: rgba(255,255,255,.1);
@@ -43,7 +93,7 @@
   }
 
   .edy-texteditor-active:hover {
-    outline: 1px solid rgba(255,255,255,0.2);
+    outline: 1px solid rgba(255,255,255,.2);
     outline-offset: 2px;
   }
 
@@ -52,12 +102,13 @@
   }
 
   .content-formatted {
-    font-weight: 300;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 750px;
+    font-weight: 300;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
   }
 
   .content-left,
@@ -67,18 +118,18 @@
   }
 
   .supported {
-    text-align: center;
     padding-top: 130px;
+    text-align: center;
 
     .browser {
       display: inline-block;
+      width: 50px;
+      padding-top: 50px;
       font-size: 13px;
       font-weight: 400;
-      color: white;
-      padding-top: 50px;
-      width: 50px;
-      background-position: 50% 5px;
+      color: #fff;
       vertical-align: top;
+      background-position: 50% 5px;
     }
 
     .browser + .browser {
@@ -88,52 +139,52 @@
 }
 
 .browser.chrome {
+  width: 37px;
+  height: 37px;
   background-image: url('/images/chrome.png');
   background-repeat: no-repeat;
   background-size: 37px 37px;
-  width: 37px;
-  height: 37px;
 }
 
 .browser.firefox {
+  width: 37px;
+  height: 37px;
   background-image: url('/images/firefox.png');
   background-repeat: no-repeat;
   background-size: 37px 37px;
-  width: 37px;
-  height: 37px;
 }
 
 .browser.ie {
+  width: 40px;
+  height: 39px;
   background-image: url('/images/ie.png');
   background-repeat: no-repeat;
   background-size: 40px 39px;
-  width: 40px;
-  height: 39px;
   background-position-y: 3px !important;
 }
 
 .browser.opera {
+  width: 35px;
+  height: 37px;
   background-image: url('/images/opera.png');
   background-repeat: no-repeat;
   background-size: 35px 37px;
-  width: 35px;
-  height: 37px;
 }
 
 .browser.safari {
+  width: 38px;
+  height: 41px;
   background-image: url('/images/safari.png');
   background-repeat: no-repeat;
   background-size: 38px 41px;
-  width: 38px;
-  height: 41px;
   background-position-y: 1px !important;
 }
 
 .browser.mobile {
+  width: 25px;
+  height: 44px;
   background-image: url('/images/mobile.png');
   background-repeat: no-repeat;
   background-size: 25px 44px;
-  width: 25px;
-  height: 44px;
   background-position-y: 1px !important;
 }

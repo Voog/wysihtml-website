@@ -8,6 +8,13 @@
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/common_page.tpl",
+      "layout_name": "page_default",
+      "title": "Common page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"
@@ -18,6 +25,13 @@
       "file": "layouts/placeholder.tpl",
       "layout_name": "page_default",
       "title": "Placeholder"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/bg-video.tpl",
+      "layout_name": "bg-video",
+      "title": "bg-video"
     },
     {
       "content_type": "component",
@@ -179,6 +193,12 @@
       "file": "assets/src",
       "kind": "assets",
       "filename": "src"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/video-placeholder.png",
+      "kind": "images",
+      "filename": "video-placeholder.png"
     },
     {
       "content_type": "application/javascript",
