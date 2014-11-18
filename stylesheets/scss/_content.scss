@@ -1,4 +1,7 @@
 .scroller-arrow {
+  @include query($tablet-3) {
+    display: none;
+  }
   outline: 0;
   position: fixed;
   right: 0;

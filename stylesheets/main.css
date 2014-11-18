@@ -243,6 +243,11 @@ body {
   width: 100%;
   text-align: center;
 }
+@media screen and (max-width: 506px) {
+  .scroller-arrow {
+    display: none;
+  }
+}
 .scroller-arrow span {
   position: relative;
   width: 50px;
@@ -250,7 +255,6 @@ body {
   display: inline-block;
 }
 .scroller-arrow span:before, .scroller-arrow span:after {
-  display: block;
   display: block;
   content: "";
   position: absolute;
