@@ -337,6 +337,8 @@ var wysihtml5ParserRules = {
                 "textAlign": 1,
                 "float": 1,
                 "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1,
                 "color": 1
             },
             "add_class": {
@@ -439,7 +441,9 @@ var wysihtml5ParserRules = {
             },
             "keep_styles": {
                 "color": 1,
-                "fontSize": 1
+                "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1
             },
             "remove_action": "unwrap"
         },

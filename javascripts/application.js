@@ -19577,146 +19577,6 @@ window.wysihtml5 = wysihtml5;
   }());
 
 }(jQuery, window));
-;(function($) {
-  // Switches the site language to the selected value from the language menu.
-  var handleLanguageSwitch = function() {
-    $('.menu-lang').find('.menu').change(function() {
-      window.location = $(this).find(':selected').val();
-    });
-  };
-
-  // Shows/hides the popover main menu (visible on smalles screens).
-  var toggleMainMenu = function() {
-    $('.js-menu-btn').click(function() {
-      $(this).toggleClass('open');
-      $('.js-menu-main').toggleClass('expanded');
-    });
-  };
-
-  // Hides the popover main menu if cicked anywhere else than the menu itself (visible on smalles screens).
-  var handlePopoverMenuHide = function() {
-    $('html').click(function() {
-      if ($('.js-lang-menu-popover').hasClass('expanded')) {
-        $('.js-lang-menu-popover').removeClass('expanded');
-      }
-    });
-  };
-
-  // Reduces opacity of the gallery images that are not under the cursor.
-  var handleGalleryHover = function() {
-    $('.edys-gallery-item').mouseover(function() {
-      $(this).siblings('.edys-gallery-item').find('.edys-gallery-image').addClass('inactive');
-    });
-
-    $('.edys-gallery-item').mouseout(function() {
-      $(this).siblings('.edys-gallery-item').find('.edys-gallery-image').removeClass('inactive');
-    });
-  };
-
-  // Removes optional content elements if element doesn't have any content.
-  var removeOptionalContent = function() {
-    optionalContent = $('.js-content-optional');
-    $.each( $(optionalContent), function(){
-      optionalContentLength = $(this).text().trim().length;
-
-      if (!optionalContentLength > 0) {
-        $(this).remove();
-      }
-    });
-  };
-
-  // Scrolls to the comment-form if comment submit failed (to show the error messages to the user).
-  var focusCommentsWithErrors = function() {
-    $(document).ready(function() {
-      if ($('.comment-form').hasClass('form_with_errors') === true) {
-        $('html, body').scrollTop($('.comment-form').offset().top);
-      }
-    });
-  };
-
-  // Wraps tables in the container.
-  // TODO: remove if edicy is going to wrap table with the container.
-  var wrapTables = function() {
-    $('.content-formatted table').wrap('<div class="table-container overthrow"></div>');
-  };
-
-  // Checks the presence of the table scrollbar.
-  var checkScrollBar = function() {
-    jQuery.fn.hasScrollBar = function(direction) {
-      if (direction == 'vertical') {
-        return this.get(0).scrollHeight > this.innerHeight();
-      } else if (direction == 'horizontal') {
-        return this.get(0).scrollWidth > this.innerWidth();
-      }
-      return false;
-    }
-  };
-
-  // Adds horizontal scroll to tables that don't fit into the content area.
-  var handleTableHorizontalScrolling = function() {
-    $.each($('.table-container'), function() {
-      if ($(this).hasScrollBar('horizontal') === true) {
-        $(this).addClass('horizontal-scroll');
-      } else {
-        $(this).removeClass('horizontal-scroll');
-      }
-    });
-  };
-
-  // Initiates the table horisontal scroll function when window is resized.
-  var handleWindowResize = function() {
-    $(window).resize(function() {
-      handleTableHorizontalScrolling();
-    });
-  };
-
-  // FUNCTIONS INITIATIONS
-  var initFrontPage = function() {
-    // Add front page layout specific functions here.
-    removeOptionalContent();
-  };
-
-  var initCommonPage = function() {
-    // Add common page specific functions here.
-    focusCommentsWithErrors();
-  };
-
-  var initBlogPage = function() {
-    // Add blog listing layout specific functions here.
-  };
-
-  var initPostPage = function() {
-    // Add single post layout specific functions here.
-    focusCommentsWithErrors();
-  };
-
-  var init = function() {
-    // Add site wide functions here.
-    handleLanguageSwitch();
-    toggleMainMenu();
-    handlePopoverMenuHide();
-    handleGalleryHover();
-    handleWindowResize();
-    wrapTables();
-    if ($('.table-container').length > 0) {
-      checkScrollBar();
-      handleTableHorizontalScrolling();
-    }
-  };
-
-  // Enables the usage of the initiations outside this file.
-  // For example add "<script>site.initBlogPage();</script>" at the end of the "Blog & News" page to initiate blog listing view functions.
-  window.site = $.extend(window.site || {}, {
-    initFrontPage: initFrontPage,
-    initCommonPage: initCommonPage,
-    initBlogPage: initBlogPage,
-    initPostPage: initPostPage
-  });
-
-  // Initiates site wide functions.
-  init();
-})(jQuery);
-
 /*! Overthrow. An overflow:auto polyfill for responsive design. (c) 2012: Scott Jehl, Filament Group, Inc. http://filamentgroup.github.com/Overthrow/license.txt */
 (function( w, o, undefined ){
 
@@ -20263,6 +20123,8 @@ var wysihtml5ParserRules = {
                 "textAlign": 1,
                 "float": 1,
                 "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1,
                 "color": 1
             },
             "add_class": {
@@ -20365,7 +20227,9 @@ var wysihtml5ParserRules = {
             },
             "keep_styles": {
                 "color": 1,
-                "fontSize": 1
+                "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1
             },
             "remove_action": "unwrap"
         },
@@ -20569,3 +20433,120 @@ var wysihtml5ParserRules = {
     }
 };
 window.wysihtml5ParserRules = wysihtml5ParserRules;
+
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+// MIT license
+(function() {
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[
+      vendors[x]+'CancelAnimationFrame'
+    ] || window[
+      vendors[x]+'CancelRequestAnimationFrame'
+    ];
+  }
+
+  if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function(callback, element) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+        timeToCall);
+      lastTime = currTime + timeToCall;
+      return id;
+    };
+
+  if (!window.cancelAnimationFrame)
+    window.cancelAnimationFrame = function(id) {
+      clearTimeout(id);
+    };
+}());
+
+;(function($) {
+  'use strict';
+  // FUNCTIONS INITIATIONS
+  var initFrontPage = function() {
+    // Add front page layout specific functions here.
+
+    $('.scroller-arrow').on('click', function(event) {
+      var getCurrentBox = function() {
+        if ($(window).scrollTop() <= $('.content-top').offset().top + $('.content-top').height()) {
+          return 'top';
+        } else if ($(window).scrollTop() <= $('.content-middle').offset().top + $('.content-middle').height()) {
+          return 'middle';
+        } else {
+          return 'bottom';
+        }
+      },  
+          $arrow = $(event.target),
+          $parent = $('.content-' + getCurrentBox()),
+          $target = $parent.next('.content-box');
+
+      $('body').animate({scrollTop: $target.offset().top + 'px'});
+    });
+
+    var latestKnownScrollY,
+        startScroll,
+        endScroll,
+        scrolled,
+        ticking = false;
+
+    var handler = function() {
+      if (!startScroll) {
+        startScroll = $(window).scrollTop();
+      } else {
+        endScroll = $(window).scrollTop();
+        scrolled = endScroll - startScroll;
+
+        var scrollBottom = endScroll + $(window).innerHeight();
+
+        var getArrowState = function() {
+          return !(scrollBottom - 20 <= $('.content-top').offset().top + $('.content-top').height() || (scrollBottom - 20 >= $('.content-middle .content-formatted').offset().top + $('.content-middle .content-formatted').height() && scrollBottom - 20 < $('.content-bottom').offset().top));
+        };
+
+        if (getArrowState()) {
+          $('.scroller-arrow').fadeOut(300);
+        } else {
+          $('.scroller-arrow').fadeIn(300);
+        }  
+
+      }
+    };
+
+    var update = function() {
+      ticking = false;
+      handler();
+    };
+
+    var requestTick = function() {
+      if (!ticking) { requestAnimationFrame(update); }
+      ticking = true;
+    };
+    
+    var onScroll = function() {
+      latestKnownScrollY = window.scrollY;
+      requestTick();
+    };
+
+    $(window).on('scroll', onScroll);
+  };
+
+  var initCommonPage = function() {
+    // Add common page specific functions here.
+  };
+
+  var init = function() {
+    // Add site wide functions here.
+  };
+
+  // Enables the usage of the initiations outside this file.
+  window.site = $.extend(window.site || {}, {
+    initFrontPage: initFrontPage,
+    initCommonPage: initCommonPage
+  });
+
+  // Initiates site wide functions.
+  init();
+})(jQuery);

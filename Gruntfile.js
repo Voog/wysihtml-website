@@ -70,7 +70,9 @@ module.exports = function(grunt) {
         src: [
         'javascripts/src/concat/jquery.js',
         'javascripts/src/concat/wysihtml5.js',
-        'javascripts/src/concat/*.js'
+        'javascripts/src/concat/*.js',
+        '!javascripts/src/concat/main.js',
+        'javascripts/src/concat/main.js'
         ],
         dest: 'javascripts/application.js'
       }

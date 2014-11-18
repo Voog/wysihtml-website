@@ -1,7 +1,48 @@
+.scroller-arrow {
+  outline: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  
+  span {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    display: inline-block;
+
+    &:before,
+    &:after {
+      display: block;
+      content:"";
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      background: rgba(0,0,0,.9);
+      left: 30px;
+      border-radius: 1px;
+    }
+    
+    &:before {
+      top: 10px;
+      left: 0;
+      transform: rotate(45deg);
+    }
+    &:after {
+      top: 10px; 
+      left: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
 .content-box {
   display: block;
   width: 100%;
-  min-height: 700px;
+  min-height: 685px;
   padding-bottom: 20px;
   background-size: cover;
 
@@ -118,7 +159,7 @@
   }
 
   .supported {
-    padding-top: 130px;
+    padding-top: 100px;
     text-align: center;
 
     .browser {

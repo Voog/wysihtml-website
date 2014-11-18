@@ -22,8 +22,10 @@
       {% include "header" %}
       {% include "content-bottom" %}
     </section>
+    <a href="#" class="scroller-arrow"><span class="animated-bounce"></span></a>
   </main>
 
   {% include "javascripts" %}
+  <script type="text/javascript">site.initFrontPage();</script>
 </body>
 </html>

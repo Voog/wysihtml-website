@@ -53,7 +53,7 @@
     </button>
   </div>
   <div class="edy-tb-menucontainer">
-    <button class="edy-tb-act edy-tb-color edy-tb-g" data-behavior="pickcolor" title="Text color">
+    <button class="edy-tb-act edy-tb-color edy-tb-g" data-behavior="foreColor" title="Text color">
       <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(1 1)" fill="none">
           <circle stroke="#979797" cx="9.5" cy="9.5" r="9.5" fill=""></circle>
@@ -63,7 +63,7 @@
     </button>
   </div>
   <div class="edy-tb-menucontainer">
-    <button class="edy-tb-act edy-tb-g" data-behavior="insertlink" title="Insert a link">
+    <button class="edy-tb-act edy-tb-g" data-behavior="createlink" title="Insert a link">
       <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <title>
           Slice 1
@@ -96,7 +96,7 @@
   </div>
   <div class="edy-itempicker-items"></div>
   </div></div></div>
-  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="alignleft" title="Align left"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="justifyLeft" title="Align left"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M4 5.5h11"></path>
           <path d="M4 7.5h9"></path>
@@ -107,7 +107,7 @@
       </g>
   </svg>
   </button>
-  <button class="edy-tb-cmd" data-wysihtml5-command="aligncenter" title="Align center"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd" data-wysihtml5-command="justifyCenter" title="Align center"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M5 5.5h11"></path>
           <path d="M6 7.5h9"></path>
@@ -118,7 +118,7 @@
       </g>
   </svg>
   </button>
-  <button class="edy-tb-cmd" data-wysihtml5-command="alignright" title="Align right"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd" data-wysihtml5-command="justifyRight" title="Align right"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M5 5.5h11"></path>
           <path d="M7 7.5h9"></path>
@@ -172,7 +172,7 @@
   </div>
 
 
-  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="insertul" title="Insert bulleted list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="insertUnorderedList" title="Insert bulleted list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(2 3)" fill="#1B2124">
           <circle id="Oval" cx="1.5" cy="12.5" r="1.5"></circle>
           <circle id="Oval" cx="1.5" cy="2.5" r="1.5"></circle>
@@ -183,7 +183,7 @@
       </g>
   </svg>
   </button>
-  <button class="edy-tb-cmd" data-wysihtml5-command="insertol" title="Insert numbered list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd" data-wysihtml5-command="insertOrderedList" title="Insert numbered list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(2 3)" fill="none">
           <path d="M2.933 4.437v-4.437h-.96l-1.459 1.071.545.746.827-.639v3.259h1.047z" id="Shape" fill="#1B2124"></path>
           <path d="M3.747 9.659v-.915h-1.811l1.028-.914.292-.28c.094-.094.177-.194.25-.304.073-.108.13-.227.172-.354.042-.127.063-.27.063-.429 0-.229-.044-.43-.134-.602-.09-.171-.21-.313-.361-.426-.15-.113-.321-.197-.514-.251-.192-.053-.391-.081-.595-.081-.218 0-.423.033-.617.098s-.367.16-.518.283c-.15.125-.274.274-.373.451-.098.177-.159.377-.184.603l1.008.138c.021-.2.087-.362.198-.485.111-.124.254-.185.429-.185.167 0 .301.049.401.146.1.098.15.227.15.385 0 .134-.033.255-.101.363-.066.109-.154.214-.262.32l-1.729 1.563v.876h3.208z" id="Shape" fill="#1B2124"></path>
@@ -279,7 +279,7 @@
       </g>
   </svg>
   </button>
-  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="source" title="Edit HTML source"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="showSource" title="Edit HTML source"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(0 6)" fill="#1B2124">
           <path d="M6.314 2.42l-6.314 2.433v1.547l6.314 2.433v-1.671l-3.954-1.523v-.025l3.954-1.523v-1.671z" id="Shape"></path>
           <path d="M7.896 9.568l1.41.432 3.743-9.569-1.42-.431-3.733 9.568z" id="Shape"></path>
