@@ -1,5 +1,4 @@
-<div class="header">
-
+<div class="header top">
     <a href="{{ page.parent.url }}" class="logo top">
         <span class="text">wysihtml</span><span class="dot">.</span>
         <span class="text-smaller">Curated by Voog</span>

@@ -20506,6 +20506,16 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
       );
     };
 
+    var getHeaderClass = function(endScroll) {
+      if (endScroll <= contentTopBottom + ($('.header').height() / 2)) {
+        return 'top';
+      } else if (endScroll <= contentMiddleFooter[1] - ($('.header').height() / 2)) {
+        return 'middle';
+      } else {
+        return 'bottom';
+      }
+    }
+
     var handler = function() {
       if (!startScroll) {
         startScroll = $(window).scrollTop();
@@ -20520,6 +20530,8 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
         } else {
           $('.scroller-arrow').fadeIn(300);
         }
+
+        $('.header').removeClass('top middle bottom').addClass(getHeaderClass(endScroll));
         startScroll = 0;
       }
     };

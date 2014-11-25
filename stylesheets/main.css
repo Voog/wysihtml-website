@@ -144,6 +144,15 @@ body {
   padding-right: 8px;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: background-color 0.15s ease;
+  -webkit-transition: background-color 0.15s ease;
+}
 .header .logo {
   position: relative;
   float: left;
@@ -168,6 +177,12 @@ body {
   font-style: italic;
   font-weight: 600;
   line-height: 1em;
+}
+.header .logo .text,
+.header .logo .dot,
+.header .logo .text-smaller {
+  transition: color 0.15s ease;
+  -webkit-transition: color 0.15s ease;
 }
 .header .gh {
   position: relative;
@@ -195,41 +210,59 @@ body {
   background-position-y: 50%;
 }
 
-.content-top .logo .text {
+@media screen and (max-width: 1086px) {
+  .header.top {
+    background-color: rgba(133, 216, 248, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
+.header.top .logo .text {
   color: #1b2124;
 }
-.content-top .logo .dot {
+.header.top .logo .dot {
   color: #00a2ff;
 }
-.content-top .logo .text-smaller {
+.header.top .logo .text-smaller {
   color: #fff9c5;
 }
 
-.content-middle .logo .text {
+@media screen and (max-width: 1086px) {
+  .header.middle {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
+.header.middle .logo .text {
   color: #1b2124;
 }
-.content-middle .logo .dot {
+.header.middle .logo .dot {
   color: #1ca2ff;
 }
-.content-middle .logo .text-smaller {
+.header.middle .logo .text-smaller {
   color: #85d8f8;
 }
 
-.content-bottom .logo .text {
+@media screen and (max-width: 1086px) {
+  .header.bottom {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+.header.bottom .logo .text {
   color: #fff;
 }
-.content-bottom .logo .dot {
+.header.bottom .logo .dot {
   color: #85d8f8;
 }
-.content-bottom .logo .text-smaller {
+.header.bottom .logo .text-smaller {
   color: #fff9c5;
 }
 
-.content-bottom .gh .fork-text {
+.header.bottom .gh .fork-text {
   color: #fff;
 }
 
-.content-bottom .gh .gh-logo-container {
+.header.bottom .gh .gh-logo-container {
   background-image: url("/images/github-logo-yellow.png");
 }
 
@@ -276,6 +309,7 @@ body {
 }
 
 .content-box {
+  padding-top: 80px;
   display: block;
   width: 100%;
   min-height: 685px;
@@ -284,7 +318,7 @@ body {
 }
 .content-box .content-formatted {
   width: 100%;
-  max-width: 640px;
+  max-width: 750px;
   margin: 40px auto 0;
 }
 
@@ -319,6 +353,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
+  overflow: hidden;
 }
 .content-bottom #frontpage-video .video-overlay,
 .content-bottom #frontpage-video .video-placeholder-container {
@@ -342,8 +377,10 @@ body {
 .content-bottom #frontpage-video video {
   display: block;
   position: absolute;
+  top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -382,6 +419,12 @@ body {
 .content-bottom .content-right {
   width: 315px;
   margin: 0 20px;
+}
+@media screen and (max-width: 752px) {
+  .content-bottom .content-left,
+  .content-bottom .content-right {
+    width: 80%;
+  }
 }
 .content-bottom .supported {
   padding-top: 100px;
@@ -2249,6 +2292,7 @@ html, body {
   width: 100%;
   max-width: 646px;
   margin-top: -40px;
+  z-index: 9;
 }
 #editor #toolbar,
 #editor #textarea {

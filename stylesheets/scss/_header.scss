@@ -1,5 +1,12 @@
 .header {
   @extend %clearfix;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: background-color 0.15s ease;
+  -webkit-transition: background-color 0.15s ease;
 
   .logo {
     position: relative;
@@ -26,6 +33,13 @@
       font-style: italic;
       font-weight: 600;
       line-height: 1em;
+    }
+
+    .text,
+    .dot,
+    .text-smaller {
+      transition: color 0.15s ease;
+      -webkit-transition: color 0.15s ease;
     }
   }
 
@@ -58,7 +72,12 @@
   }
 }
 
-.content-top {
+.header.top {
+  @media screen and (max-width: 1086px) {
+    background-color: rgba(133,216,248,.9);
+    border-bottom: 1px solid rgba(0,0,0,.3);
+  }
+
   .logo {
     .text {
       color: #1b2124;
@@ -74,7 +93,12 @@
   }
 }
 
-.content-middle {
+.header.middle {
+  @media screen and (max-width: 1086px) {
+    background-color: rgba(255,255,255,.9);
+    border-bottom: 1px solid rgba(0,0,0,.3);
+  }
+
   .logo {
     .text {
       color: #1b2124;
@@ -90,7 +114,12 @@
   }
 }
 
-.content-bottom {
+.header.bottom {
+  @media screen and (max-width: 1086px) {
+    background-color: rgba(0,0,0,.9);
+    border-bottom: 1px solid rgba(255,255,255,.3);
+  }
+
   .logo {
     .text {
       color: #fff;
@@ -106,10 +135,10 @@
   }
 }
 
-.content-bottom .gh .fork-text {
+.header.bottom .gh .fork-text {
   color: #fff;
 }
 
-.content-bottom .gh .gh-logo-container {
+.header.bottom .gh .gh-logo-container {
   background-image: url('/images/github-logo-yellow.png');
 }
