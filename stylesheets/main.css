@@ -150,8 +150,8 @@ body {
   left: 0;
   right: 0;
   z-index: 10;
-  transition: background-color 0.15s ease;
   -webkit-transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 .header .logo {
   position: relative;
@@ -301,18 +301,20 @@ body {
   top: 10px;
   left: 0;
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 .scroller-arrow span:after {
   top: 10px;
   left: 20px;
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .content-box {
   padding-top: 80px;
   display: block;
   width: 100%;
-  min-height: 685px;
+  min-height: 585px;
   padding-bottom: 20px;
   background-size: cover;
 }
@@ -342,6 +344,7 @@ body {
   position: relative;
   color: rgba(255, 255, 255, 0.5);
   background-color: #1c2123;
+  min-height: initial;
 }
 .content-bottom #frontpage-video {
   position: absolute;
@@ -408,10 +411,12 @@ body {
 }
 .content-bottom .content-formatted {
   display: flex;
+  display: -webkit-flex;
   width: 100%;
   max-width: 750px;
   font-weight: 300;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: center;
   position: relative;
 }
@@ -429,6 +434,7 @@ body {
 .content-bottom .supported {
   padding-top: 100px;
   text-align: center;
+  width: 100%;
 }
 .content-bottom .supported .browser {
   display: inline-block;
@@ -967,10 +973,6 @@ html, body {
 
 .edy-tb .edy-tb-color-tab.active {
   color: red;
-}
-
-.edy-tb .edy-tb-list-indent-tools {
-  display: none;
 }
 
 .edy-tb .edy-tb-list-indent-tools.edy-tb-list-active {
@@ -2265,6 +2267,9 @@ html, body {
   max-width: 640px;
   margin: 50px auto 0;
 }
+#editor p {
+  margin: 0;
+}
 #editor h2 {
   margin-bottom: 0;
 }
@@ -2463,6 +2468,11 @@ html, body {
 
 .wysiwyg-clear-left {
   clear: left;
+}
+
+[data-behavior="createlink"] + .edy-popover {
+  position: relative;
+  top: 25px;
 }
 
 @media (max-width: 790px) {

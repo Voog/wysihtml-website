@@ -627,6 +627,12 @@ var wysihtml5ParserRules = {
         "p": {
             "add_class": {
                 "align": "align_text"
+            },
+            "keep_styles": {
+                "color": 1,
+                "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1
             }
         },
         "sub": {

@@ -27,26 +27,23 @@
         <path d="M11.5 17.5v-12.5h1.5v12.5h1.5v-14h-4.5c-.714 0-3.5 0-3.5 3s2.5 3 3.5 3v8h1.5z" fill="#1B2124"></path>
       </svg>
     </button>
-    <div class="edy-tb-stylemenu">
-      <button class="edy-tb-cmd edy-tb-style-h1" data-wysihtml5-command="format" data-value="h1" style="font-weight: bold; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Title</button>
-      <button class="edy-tb-cmd edy-tb-style-h2" data-wysihtml5-command="format" data-value="h2" style="font-weight: bold; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Heading</button>
-      <button class="edy-tb-cmd edy-tb-style-h3" data-wysihtml5-command="format" data-value="h3" style="font-weight: bold; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Subheading</button>
-      <button class="edy-tb-cmd edy-tb-style-p" data-wysihtml5-command="format" data-value="p" style="font-weight: 400; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Normal text</button>
-      <button class="edy-tb-cmd edy-tb-style-pre" data-wysihtml5-command="format" data-value="pre" style="font-weight: 400; font-family: monospace;">Fixed width</button>
-      <button class="edy-tb-cmd edy-tb-style-blockquote" data-wysihtml5-command="blockquote">Quote block</button>
-      <div class="edy-tb-tabletools edy-tb-table-celltools edy-tb-cellstyle-tools">
-        <button class="edy-tb-cmd edy-tb-style-th" data-wysihtml5-command="tableheadercell">Header cell</button>
-      </div>
+    <div class="edy-tb-stylemenu" style="display: none;">
+      <button class="edy-tb-cmd edy-tb-style-h1" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Title</button>
+      <button class="edy-tb-cmd edy-tb-style-h2" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Heading</button>
+      <button class="edy-tb-cmd edy-tb-style-h3" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Subheading</button>
+      <button class="edy-tb-cmd edy-tb-style-p" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Normal text</button>
+      <button class="edy-tb-cmd edy-tb-style-pre" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="pre" style="font-weight: 300; font-family: monospace;">Fixed width</button>
+      <button class="edy-tb-cmd edy-tb-style-blockquote" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="blockquote">Quote block</button>
     </div>
   </div>
   <div class="edy-tb-size edy-tb-g">
-    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command="fontsize" data-value="-" title="Decrease text size">
+    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command-value="-" title="Decrease text size">
       <svg width="10" height="21" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 10v2h6v-2h-6z" fill="currentColor"></path>
       </svg>
     </button>
     <input class="edy-tb-size-val" title="Text size">
-    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command="fontsize" data-value="+" title="Increase text size">
+    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command-value="+" title="Increase text size">
       <svg width="10" height="21" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 10h3v-3h2v3h3v2h-3v3h-2v-3h-3v-2z" fill="currentColor"></path>
       </svg>
@@ -61,8 +58,32 @@
         </g>
       </svg>
     </button>
+    <div class="edy-tb-dropdown edy-tb-color-modal" style="display: none;">
+      <div class="edy-tb-color-tab-content">
+        <div class="edy-colorpicker">
+          <div class="edy-colorpicker-colors" data-wysihtml5-command-group="foreColor">
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value style="border:1px solid #ccc;"><svg width="100%" height="100%" class="no-color"><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:rgba(255,0,0,0.8);stroke-width:1;"></line></svg></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="white" style="background-color: white"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver" style="background-color: silver"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray" style="background-color: gray"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="aqua" style="background-color: aqua"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" style="background-color: blue"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy" style="background-color: navy"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="teal" style="background-color: teal"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" style="background-color: green"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="lime" style="background-color: lime"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="yellow" style="background-color: yellow"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive" style="background-color: olive"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon" style="background-color: maroon"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" style="background-color: red"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="fuchsia" style="background-color: fuchsia"></div>
+            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple" style="background-color: purple"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="edy-tb-menucontainer">
+  <!--div class="edy-tb-menucontainer">
     <button class="edy-tb-act edy-tb-g" data-behavior="createlink" title="Insert a link">
       <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <title>
@@ -94,8 +115,8 @@
       <button class="edy-btn edy-btn-large edy-btn-green" data-behavior="insert">Insert</button>
     </div>
   </div>
-  <div class="edy-itempicker-items"></div>
-  </div></div></div>
+  </div></div></div-->
+
   <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="justifyLeft" title="Align left"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M4 5.5h11"></path>
@@ -107,6 +128,7 @@
       </g>
   </svg>
   </button>
+
   <button class="edy-tb-cmd" data-wysihtml5-command="justifyCenter" title="Align center"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M5 5.5h11"></path>
@@ -118,6 +140,7 @@
       </g>
   </svg>
   </button>
+
   <button class="edy-tb-cmd" data-wysihtml5-command="justifyRight" title="Align right"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="currentColor">
           <path d="M5 5.5h11"></path>
@@ -130,48 +153,6 @@
   </svg>
   </button>
 
-  <div class="edy-tb-tabletools edy-tb-table-celltools edy-tb-menucontainer">
-    <button class="edy-tb-btn edy-tb-act edy-tb-valigncombo-btn bottom" data-behavior="picktablecellvalign" title="Vertical align">
-      <span class="bottom" title="Align bottom"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="10.5" y1="5" x2="10.5" y2="11" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 11 L13 11 L10.5 14 Z" fill="rgb(0,0,0)"></path>
-    <line x1="5" y1="15.5" x2="16" y2="15.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></span>
-      <span class="top" title="Align top"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="5" y1="5.5" x2="16" y2="5.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 10 L13 10 L10.5 7 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="9" x2="10.5" y2="16" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></span>
-      <span class="middle" title="Align middle"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="5" y1="10.5" x2="16" y2="10.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 15 L13 15 L10.5 12 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="12" x2="10.5" y2="17" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 6 L13 6 L10.5 9 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="4" x2="10.5" y2="6" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></span>
-    </button>
-    <div class="edy-tb-dropdown edy-valign-dropdown">
-      <button class="edy-tb-cmd" data-wysihtml5-command="tablecellvalign" data-value="top" title="Align top"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="5" y1="5.5" x2="16" y2="5.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 10 L13 10 L10.5 7 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="9" x2="10.5" y2="16" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></button>
-      <button class="edy-tb-cmd" data-wysihtml5-command="tablecellvalign" data-value="middle" title="Align middle"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="5" y1="10.5" x2="16" y2="10.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 15 L13 15 L10.5 12 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="12" x2="10.5" y2="17" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 6 L13 6 L10.5 9 Z" fill="rgb(0,0,0)"></path>
-    <line x1="10.5" y1="4" x2="10.5" y2="6" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></button>
-      <button class="edy-tb-cmd" data-wysihtml5-command="tablecellvalign" data-value="bottom" title="Align bottom"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <line x1="10.5" y1="5" x2="10.5" y2="11" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-    <path d="M8 11 L13 11 L10.5 14 Z" fill="rgb(0,0,0)"></path>
-    <line x1="5" y1="15.5" x2="16" y2="15.5" style="stroke: rgb(0,0,0); stroke-width: 1;"></line>
-  </svg></button>
-    </div>
-  </div>
-
-
   <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="insertUnorderedList" title="Insert bulleted list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(2 3)" fill="#1B2124">
           <circle id="Oval" cx="1.5" cy="12.5" r="1.5"></circle>
@@ -183,6 +164,7 @@
       </g>
   </svg>
   </button>
+
   <button class="edy-tb-cmd" data-wysihtml5-command="insertOrderedList" title="Insert numbered list"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(2 3)" fill="none">
           <path d="M2.933 4.437v-4.437h-.96l-1.459 1.071.545.746.827-.639v3.259h1.047z" id="Shape" fill="#1B2124"></path>
@@ -193,92 +175,7 @@
           <path d="M6.5 7.5h9" stroke="#1B2124"></path>
       </g>
   </svg></button>
-  <div class="edy-tb-menucontainer edy-tb-list-indent-tools">
-    <button class="edy-tb-cmd" data-wysihtml5-command="outdentlist" title="Outdent"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="currentColor">
-          <path d="M5 5.5h12"></path>
-          <path d="M10 7.5h7"></path>
-          <path d="M10 9.5h7"></path>
-          <path d="M10 11.5h7"></path>
-          <path d="M10 13.5h7"></path>
-          <path d="M5 15.5h12"></path>
-      </g>
-      <path d="M8 7.5 L5 10.5 L8 13.5 Z" fill="currentColor"></path>
-  </svg>
-  </button>
-    <button class="edy-tb-cmd" data-wysihtml5-command="indentlist" title="Indent"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="currentColor">
-          <path d="M5 5.5h12"></path>
-          <path d="M10 7.5h7"></path>
-          <path d="M10 9.5h7"></path>
-          <path d="M10 11.5h7"></path>
-          <path d="M10 13.5h7"></path>
-          <path d="M5 15.5h12"></path>
-      </g>
-      <path d="M5 7.5 L8 10.5 L5 13.5 Z" fill="currentColor"></path>
-  </svg>
-  </button>
-  </div>
 
-  <div class="edy-tb-menucontainer edy-tb-tabletools">
-    <button class="edy-tb-btn edy-tb-act edy-tb-table edy-tb-g" data-behavior="picktable" title="Insert a table"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(3 3)" fill="#1B2124">
-          <rect width="3" height="3"></rect>
-          <rect y="4" width="3" height="3"></rect>
-          <rect y="8" width="3" height="3"></rect>
-          <rect y="12" width="3" height="3"></rect>
-          <rect x="4" width="3" height="3"></rect>
-          <rect x="8" width="3" height="3"></rect>
-          <rect x="12" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="4" y="4" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="8" y="4" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="12" y="4" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="8" y="8" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="4" y="8" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="4" y="12" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="8" y="12" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="12" y="12" width="3" height="3"></rect>
-          <rect fill-opacity=".5" x="12" y="8" width="3" height="3"></rect>
-      </g>
-  </svg>
-  </button>
-  </div>
-  <div class="edy-tb-tabletools edy-tb-table-celltools edy-tb-menucontainer">
-    <button class="edy-tb-btn edy-tb-act" data-behavior="pickaddcells" title="Add row/column"><svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 6v-5h-2v5h-5v2h5v5h2v-5h5v-2h-5z" fill="currentColor"></path>
-  </svg>
-  </button>
-    <div class="edy-tb-dropdown edy-table-add-picker">
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="addtablecells" data-value="above">Add new row above</button>
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="addtablecells" data-value="below">Add new row below</button>
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="addtablecells" data-value="before">Add new column before</button>
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="addtablecells" data-value="after">Add new column after</button>
-    </div>
-  </div>
-  <div class="edy-tb-tabletools edy-tb-table-celltools edy-tb-menucontainer">
-    <button class="edy-tb-btn edy-tb-act" data-behavior="pickdeletecells" title="Remove row/column"><svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="currentColor" fill="none">
-          <path d="M8.5 6.5v5" stroke-linecap="round"></path>
-          <path d="M5.5 6.5v5" stroke-linecap="round"></path>
-          <path d="M2.5 5v8.5h9l0-8.5" stroke-linejoin="round"></path>
-          <path d="M5.5.5v1h-4v3h11v-3h-4v-1h-3z" stroke-linejoin="round"></path>
-      </g>
-  </svg>
-  </button>
-    <div class="edy-tb-dropdown edy-table-delete-picker">
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="deletetablecells" data-value="row">Remove row</button>
-      <button class="edy-tb-cmd edy-tb-textual" data-wysihtml5-command="deletetablecells" data-value="column">Remove column</button>
-    </div>
-  </div>
-  <button class="edy-tb-tabletools edy-tb-table-celltools edy-tb-cmd" data-wysihtml5-command="mergetablecells" title="Merge cells"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none">
-          <path d="M6.5 2v-2.5h-7v11.961l7 .039v-2.5" stroke-opacity=".5" stroke="#1B2124" stroke-linejoin="round" transform="translate(2 5)"></path>
-          <path d="M10.531 2v-2.481h6.972v11.959h-6.972v-2.478" stroke-opacity=".5" stroke="#1B2124" stroke-linejoin="round" transform="translate(2 5)"></path>
-          <path d="M7 11h-3v-1h3v-2l2.978 2.5-2.978 2.5v-2z" fill="#1B2124"></path>
-          <path d="M14 11h3v-1h-3v-2l-3 2.492 3 2.492v-1.985z" fill="#1B2124"></path>
-      </g>
-  </svg>
-  </button>
   <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="showSource" title="Edit HTML source"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(0 6)" fill="#1B2124">
           <path d="M6.314 2.42l-6.314 2.433v1.547l6.314 2.433v-1.671l-3.954-1.523v-.025l3.954-1.523v-1.671z" id="Shape"></path>

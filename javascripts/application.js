@@ -10307,6 +10307,7 @@ return jQuery;
 
 }));
 
+
 /**
  * @license wysihtml5x v0.4.0-beta2
  * https://github.com/Edicy/wysihtml5
@@ -16402,7 +16403,7 @@ wysihtml5.commands.bold = {
     exec: function(composer, command, tagName, className, classRegExp, cssStyle, styleRegExp, dontRestoreSelect, noCleanup) {
       var range = composer.selection.createRange();
           ownRanges = composer.selection.getOwnRanges();
-      
+
       if (!ownRanges || ownRanges.length == 0) {
         return false;
       }
@@ -20413,6 +20414,12 @@ var wysihtml5ParserRules = {
         "p": {
             "add_class": {
                 "align": "align_text"
+            },
+            "keep_styles": {
+                "color": 1,
+                "fontSize": 1,
+                "fontWeight": 1,
+                "fontStyle": 1
             }
         },
         "sub": {
@@ -20466,22 +20473,120 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
 
 ;(function($) {
   'use strict';
-  // FUNCTIONS INITIATIONS
+
+  var initEditor = function() {
+    $('[data-behavior="showstyles"]').on('click', function(event) {
+      event.stopPropagation();
+      $('[data-behavior="showstyles"] + .edy-tb-stylemenu').toggle();
+      $('body').on('click', styleToolSideClick);
+    });
+    $('[data-behavior="foreColor"]').on('click', function(event) {
+      event.stopPropagation();
+      $('[data-behavior="foreColor"] + .edy-tb-color-modal').toggle();
+      $('body').on('click', colorToolSideClick);
+    });
+    $('[data-behavior="createlink"]').on('click', function(event) {
+      event.stopPropagation();
+      $('[data-behavior="createlink"] + .edy-popover').toggle();
+      $('body').on('click', linkToolSideClick);
+    });
+
+    var styleToolSideClick = function(event) {
+      event.stopPropagation();
+      var $target = $(event.target);
+      if (!(document.querySelector('[data-behavior="showstyles"] + .edy-tb-stylemenu').contains(event.target))) {
+        $('[data-behavior="showstyles"] + .edy-tb-stylemenu').hide(); 
+        $('body').off('click', styleToolSideClick);
+      }
+    };
+
+    var linkToolSideClick = function(event) {
+      event.stopPropagation();
+      var $target = $(event.target);
+      if (!(document.querySelector('[data-behavior="createlink"] + .edy-popover').contains(event.target))) {
+        $('[data-behavior="createlink"] + .edy-popover').hide(); 
+        $('body').off('click', linkToolSideClick);
+      }
+    };
+
+    var colorToolSideClick = function(event) {
+      event.stopPropagation();
+      var $target = $(event.target);
+      if (!(document.querySelector('[data-behavior="foreColor"] + .edy-tb-color-modal').contains(event.target))) {
+        $('[data-behavior="foreColor"] + .edy-tb-color-modal').hide(); 
+        $('body').off('click', colorToolSideClick);
+      }
+    };
+
+    var fontSizeCmd = function fontSizeCmd(event) {
+      var options = $(event.target).closest('.edy-tb-size-btn').data('wysihtml5-command-value');
+      var fontSize;
+      if (restoreSelection()) {
+        if (options === '+' || options === '-') {
+          fontSize = Math.round(getSelectionFontSize()) + ((options === '-') ? -1 : 1);
+          editor.composer.commands.exec('fontSizeStyle', fontSize + 'px');
+        } else {
+          fontSize = parseFloat(options);
+          if (getSelectionFontSize() !== fontSize) {
+            editor.composer.commands.exec('fontSizeStyle', fontSize + 'px');
+          }
+        }
+      }
+    };
+
+    var getSelectionFontSize = function() {
+      var size = editor.composer.commands.stateValue('fontSizeStyle');
+
+      if (!size) {
+        var selectionNode = getSelectionNode();
+        size = (selectionNode) ? $(selectionNode).css('font-size') : null;
+      }
+
+      if (size) {
+        return parseFloat(size);
+      }
+
+      return null;
+    };
+
+    var getSelectionNode = function() {
+      var selectionAncestorNode = editor.composer.selection.getSelectedNode();
+      if (selectionAncestorNode && selectionAncestorNode.nodeType !== 1) {
+        selectionAncestorNode = selectionAncestorNode.parentNode;
+      }
+      return selectionAncestorNode;
+    };
+
+    var restoreSelection = function(event) {
+      if (editor.selBookmark) {
+        editor.composer.selection.setBookmark(editor.selBookmark);
+        return true;
+      }
+      return false;
+    };
+
+    $('#textarea').on('mouseup blur', function(event) {
+      editor.selBookmark = editor.composer.selection.getBookmark();
+    });
+
+    $('#toolbar').on('mouseup', '.edy-tb-size-btn', fontSizeCmd);
+  };
+
   var initFrontPage = function() {
     // Add front page layout specific functions here.
+    var getCurrentBox = function() {
+      if (document.querySelector('.content-top').getBoundingClientRect().bottom - window.innerHeight > -20) {
+        return 'top';
+      } else if (document.querySelector('.content-middle').getBoundingClientRect().bottom - window.innerHeight > -20) {
+        return 'middle';
+      } else {
+        return 'bottom';
+      }
+    };
 
     $('.scroller-arrow').on('click', function(event) {
-      var getCurrentBox = function() {
-        if ($(window).scrollTop() <= $('.content-top').offset().top + $('.content-top').height()) {
-          return 'top';
-        } else if ($(window).scrollTop() <= $('.content-middle').offset().top + $('.content-middle').height()) {
-          return 'middle';
-        } else {
-          return 'bottom';
-        }
-      },  
-          $arrow = $(event.target),
-          $parent = $('.content-' + getCurrentBox()),
+      event.preventDefault();
+      var $parent = $('.content-' + getCurrentBox()),
           $target = $parent.next('.content-box');
 
       $('body').animate({scrollTop: $target.offset().top + 'px'});
@@ -20493,24 +20598,22 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
         scrolled,
         ticking = false;
 
-    var contentTopBottom = $('.content-top').offset().top + $('.content-top').height();
-    var contentMiddleFooter = [
-      $('.content-middle .content-formatted').offset().top + $('.content-middle .content-formatted').height(),
-      $('.content-bottom').offset().top
-    ];
-
     var getArrowState = function(scrollBottom) {
       return !(
-        scrollBottom - 20 <= contentTopBottom ||
-        (scrollBottom - 20 >= contentMiddleFooter[0] && scrollBottom - 20 < contentMiddleFooter[1])
+        (document.querySelector('.content-top').getBoundingClientRect().bottom - window.innerHeight > 0 &&
+        document.querySelector('.content-top #editor').getBoundingClientRect().bottom - window.innerHeight + 30 < 0) ||
+        (document.querySelector('.content-middle').getBoundingClientRect().bottom - window.innerHeight > 0 &&
+        document.querySelector('.content-middle .content-formatted').getBoundingClientRect().bottom - window.innerHeight + 30 < 0)
       );
     };
 
-    var getHeaderClass = function(endScroll) {
-      if (endScroll <= contentTopBottom + ($('.header').height() / 2)) {
-        return 'top';
-      } else if (endScroll <= contentMiddleFooter[1] - ($('.header').height() / 2)) {
-        return 'middle';
+    var getHeaderClass = function() {
+      if (document.querySelector('.content-bottom').getBoundingClientRect().top - $('.header').height()/2 > 0) {
+        if (document.querySelector('.content-middle').getBoundingClientRect().top - $('.header').height()/2 > 0) {
+          return 'top';
+        } else {
+          return 'middle';
+        }
       } else {
         return 'bottom';
       }
@@ -20518,9 +20621,9 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
 
     var handler = function() {
       if (!startScroll) {
-        startScroll = $(window).scrollTop();
+        startScroll = window.scrollY;
       } else {
-        endScroll = $(window).scrollTop();
+        endScroll = window.scrollY;
         scrolled = endScroll - startScroll;
 
         var scrollBottom = endScroll + $(window).innerHeight();
@@ -20531,7 +20634,7 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
           $('.scroller-arrow').fadeIn(300);
         }
 
-        $('.header').removeClass('top middle bottom').addClass(getHeaderClass(endScroll));
+        $('.header').removeClass('top middle bottom').addClass(getHeaderClass());
         startScroll = 0;
       }
     };
@@ -20552,14 +20655,12 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
     };
 
     $(window).on('scroll', onScroll);
+
+    initEditor();
   };
 
   var initCommonPage = function() {
     // Add common page specific functions here.
-  };
-
-  var init = function() {
-    // Add site wide functions here.
   };
 
   // Enables the usage of the initiations outside this file.
@@ -20567,7 +20668,4 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
     initFrontPage: initFrontPage,
     initCommonPage: initCommonPage
   });
-
-  // Initiates site wide functions.
-  init();
 })(jQuery);

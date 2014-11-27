@@ -5,8 +5,8 @@
   left: 0;
   right: 0;
   z-index: 10;
-  transition: background-color 0.15s ease;
   -webkit-transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease;
 
   .logo {
     position: relative;
@@ -38,8 +38,8 @@
     .text,
     .dot,
     .text-smaller {
-      transition: color 0.15s ease;
       -webkit-transition: color 0.15s ease;
+      transition: color 0.15s ease;
     }
   }
 
