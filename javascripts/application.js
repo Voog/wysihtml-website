@@ -20657,6 +20657,8 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
     $(window).on('scroll', onScroll);
 
     initEditor();
+
+    $('.content-box').attr('style', 'min-height:' + (window.innerHeight - 100) + 'px;');
   };
 
   var initCommonPage = function() {
