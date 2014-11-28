@@ -32,25 +32,28 @@
     float: right;
   }
 
+  #toolbar [class^=wysiwyg-font-size] {
+    padding: 0.7em 10px;
+  }
+
   #toolbar button:focus {
     outline: none;
   }
 
   #toolbar {
-    margin-top: -40px;
+    margin-top: -30px;
     z-index: 9;
   }
 
   #toolbar,
   #textarea {
-    padding: 5px;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 
-  textarea, iframe {
+  #textarea {
     line-height: 1.2em;
     width: 100%;
     max-width: 640px;
@@ -59,20 +62,14 @@
     background-color: transparent;
   }
 
-  #textarea {
-    font-family: Inconsolata, Monaco, monospace;
-    font-size: 15px;
-    line-height: 1.2em;
-  }
-
   #textarea:focus {
     outline: none;
   }
 
-  iframe {
+  iframe body {
     font-family:"Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
     ul {
-      -webkit-padding-start: 1em;
+      margin: 0.5em !important;
     }
   }
 
@@ -85,55 +82,38 @@
     padding: 5px;
     border: 1px solid #666;
   }
-
-  a[data-wysihtml5-command-value="red"] {
-    color: red;
-  }
-
-  a[data-wysihtml5-command-value="green"] {
-    color: green;
-  }
-
-  a[data-wysihtml5-command-value="blue"] {
-    color: blue;
-  }
-
 }
 
-.wysiwyg-font-size-smaller {
-  font-size: smaller;
-}
-
-.wysiwyg-font-size-larger {
-  font-size: larger;
+[class^="wysiwyg-font-size"] {
+  line-height: 1em;
 }
 
 .wysiwyg-font-size-xx-large {
-  font-size: xx-large;
+  font-size: 75px;
 }
 
 .wysiwyg-font-size-x-large {
-  font-size: x-large;
+  font-size: 50px;
 }
 
 .wysiwyg-font-size-large {
-  font-size: large;
+  font-size: 35px;
 }
 
 .wysiwyg-font-size-medium {
-  font-size: medium;
+  font-size: 22px;
 }
 
 .wysiwyg-font-size-small {
-  font-size: small;
+  font-size: 18px;
 }
 
 .wysiwyg-font-size-x-small {
-  font-size: x-small;
+  font-size: 14px;
 }
 
 .wysiwyg-font-size-xx-small {
-  font-size: xx-small;
+  font-size: 10px;
 }
 
 .wysiwyg-color-black {

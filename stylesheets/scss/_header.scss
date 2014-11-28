@@ -5,8 +5,8 @@
   left: 0;
   right: 0;
   z-index: 10;
-  -webkit-transition: background-color 0.15s ease;
-  transition: background-color 0.15s ease;
+  -webkit-transition: background-color .15s ease;
+  transition: background-color .15s ease;
 
   .logo {
     position: relative;
@@ -38,8 +38,8 @@
     .text,
     .dot,
     .text-smaller {
-      -webkit-transition: color 0.15s ease;
-      transition: color 0.15s ease;
+      -webkit-transition: color .15s ease;
+      transition: color .15s ease;
     }
   }
 
@@ -75,7 +75,6 @@
 .header.top {
   @media screen and (max-width: 1086px) {
     background-color: rgba(133,216,248,.9);
-    border-bottom: 1px solid rgba(0,0,0,.3);
   }
 
   .logo {
@@ -97,7 +96,6 @@
 .common-page .header {
   @media screen and (max-width: 1086px) {
     background-color: rgba(255,255,255,.9);
-    border-bottom: 1px solid rgba(0,0,0,.3);
   }
 
   .logo {
@@ -118,7 +116,6 @@
 .header.bottom {
   @media screen and (max-width: 1086px) {
     background-color: rgba(0,0,0,.9);
-    border-bottom: 1px solid rgba(255,255,255,.3);
   }
 
   .logo {

@@ -7,6 +7,11 @@
       $('[data-behavior="showstyles"] + .edy-tb-stylemenu').toggle();
       $('body').on('click', styleToolSideClick);
     });
+    $('[data-behavior="showfontsizes"]').on('click', function(event) {
+      event.stopPropagation();
+      $('[data-behavior="showfontsizes"] + .edy-tb-stylemenu').toggle();
+      $('body').on('click', fontSizeToolSideClick);
+    });
     $('[data-behavior="foreColor"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="foreColor"] + .edy-tb-color-modal').toggle();
@@ -24,6 +29,15 @@
       if (!(document.querySelector('[data-behavior="showstyles"] + .edy-tb-stylemenu').contains(event.target))) {
         $('[data-behavior="showstyles"] + .edy-tb-stylemenu').hide(); 
         $('body').off('click', styleToolSideClick);
+      }
+    };
+
+    var fontSizeToolSideClick = function(event) {
+      event.stopPropagation();
+      var $target = $(event.target);
+      if (!(document.querySelector('[data-behavior="showfontsizes"] + .edy-tb-stylemenu').contains(event.target))) {
+        $('[data-behavior="showfontsizes"] + .edy-tb-stylemenu').hide(); 
+        $('body').off('click', fontSizeToolSideClick);
       }
     };
 
@@ -185,7 +199,9 @@
 
     initEditor();
 
-    $('.content-box').attr('style', 'min-height:' + (window.innerHeight - 100) + 'px;');
+    $('body').on('load', setTimeout(function() {
+      $('.header').removeClass('top middle bottom').addClass(getHeaderClass());
+    }, 0));
   };
 
   var initCommonPage = function() {

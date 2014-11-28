@@ -36,18 +36,17 @@
       <button class="edy-tb-cmd edy-tb-style-blockquote" data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="blockquote">Quote block</button>
     </div>
   </div>
-  <div class="edy-tb-size edy-tb-g">
-    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command-value="-" title="Decrease text size">
-      <svg width="10" height="21" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 10v2h6v-2h-6z" fill="currentColor"></path>
-      </svg>
-    </button>
-    <input class="edy-tb-size-val" title="Text size">
-    <button class="edy-tb-size-btn edy-tb-cmd" data-wysihtml5-command-value="+" title="Increase text size">
-      <svg width="10" height="21" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 10h3v-3h2v3h3v2h-3v3h-2v-3h-3v-2z" fill="currentColor"></path>
-      </svg>
-    </button>
+  <div class="edy-tb-menucontainer">
+    <button class="edy-tb-act edy-tb-paragraph edy-tb-g" data-behavior="showfontsizes" title="Font size" style="font-size:17px;">↕</button>
+    <div class="edy-tb-stylemenu" style="display: none;">
+      <button class="edy-tb-cmd wysiwyg-font-size-xx-small" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="xx-small" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">xx-small</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-x-small" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="x-small" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px;">x-small</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-small" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="small" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:16px;">small</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-medium" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="medium" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:18px;;">medium</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:20px;">large</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-x-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="x-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:25px;">x-large</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-xx-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="xx-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px;">xx-large</button>
+    </div>
   </div>
   <div class="edy-tb-menucontainer">
     <button class="edy-tb-act edy-tb-color edy-tb-g" data-behavior="foreColor" title="Text color">

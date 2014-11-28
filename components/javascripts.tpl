@@ -5,7 +5,7 @@
   window.editor = new wysihtml5.Editor(document.querySelector('#textarea'), {
     name: 'demo-editor',
     style: false,
-    toolbar:      "toolbar",
+    toolbar: "toolbar",
     parserRules:  wysihtml5ParserRules,
     stylesheets: ['/stylesheets/main.min.css']
   });

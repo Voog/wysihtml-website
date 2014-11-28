@@ -150,8 +150,8 @@ body {
   left: 0;
   right: 0;
   z-index: 10;
-  -webkit-transition: background-color 0.15s ease;
-  transition: background-color 0.15s ease;
+  -webkit-transition: background-color .15s ease;
+  transition: background-color .15s ease;
 }
 .header .logo {
   position: relative;
@@ -181,8 +181,8 @@ body {
 .header .logo .text,
 .header .logo .dot,
 .header .logo .text-smaller {
-  -webkit-transition: color 0.15s ease;
-  transition: color 0.15s ease;
+  -webkit-transition: color .15s ease;
+  transition: color .15s ease;
 }
 .header .gh {
   position: relative;
@@ -213,7 +213,6 @@ body {
 @media screen and (max-width: 1086px) {
   .header.top {
     background-color: rgba(133, 216, 248, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 }
 .header.top .logo .text {
@@ -230,7 +229,6 @@ body {
   .header.middle,
   .common-page .header {
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 }
 .header.middle .logo .text,
@@ -249,7 +247,6 @@ body {
 @media screen and (max-width: 1086px) {
   .header.bottom {
     background-color: rgba(0, 0, 0, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 .header.bottom .logo .text {
@@ -2294,22 +2291,24 @@ html, body {
 #editor #toolbar [data-wysihtml5-action] {
   float: right;
 }
+#editor #toolbar [class^=wysiwyg-font-size] {
+  padding: 0.7em 10px;
+}
 #editor #toolbar button:focus {
   outline: none;
 }
 #editor #toolbar {
-  margin-top: -40px;
+  margin-top: -30px;
   z-index: 9;
 }
 #editor #toolbar,
 #editor #textarea {
-  padding: 5px;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#editor textarea, #editor iframe {
+#editor #textarea {
   line-height: 1.2em;
   width: 100%;
   max-width: 640px;
@@ -2317,16 +2316,14 @@ html, body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: transparent;
 }
-#editor #textarea {
-  font-family: Inconsolata, Monaco, monospace;
-  font-size: 15px;
-  line-height: 1.2em;
-}
 #editor #textarea:focus {
   outline: none;
 }
-#editor iframe ul {
-  -webkit-padding-start: 1em;
+#editor iframe body {
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+#editor iframe body ul {
+  margin: 0.5em !important;
 }
 #editor .wysihtml5-command-active {
   font-weight: bold;
@@ -2336,50 +2333,37 @@ html, body {
   padding: 5px;
   border: 1px solid #666;
 }
-#editor a[data-wysihtml5-command-value="red"] {
-  color: red;
-}
-#editor a[data-wysihtml5-command-value="green"] {
-  color: green;
-}
-#editor a[data-wysihtml5-command-value="blue"] {
-  color: blue;
-}
 
-.wysiwyg-font-size-smaller {
-  font-size: smaller;
-}
-
-.wysiwyg-font-size-larger {
-  font-size: larger;
+[class^="wysiwyg-font-size"] {
+  line-height: 1em;
 }
 
 .wysiwyg-font-size-xx-large {
-  font-size: xx-large;
+  font-size: 75px;
 }
 
 .wysiwyg-font-size-x-large {
-  font-size: x-large;
+  font-size: 50px;
 }
 
 .wysiwyg-font-size-large {
-  font-size: large;
+  font-size: 35px;
 }
 
 .wysiwyg-font-size-medium {
-  font-size: medium;
+  font-size: 22px;
 }
 
 .wysiwyg-font-size-small {
-  font-size: small;
+  font-size: 18px;
 }
 
 .wysiwyg-font-size-x-small {
-  font-size: x-small;
+  font-size: 14px;
 }
 
 .wysiwyg-font-size-xx-small {
-  font-size: xx-small;
+  font-size: 10px;
 }
 
 .wysiwyg-color-black {
