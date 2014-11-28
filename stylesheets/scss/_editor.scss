@@ -57,11 +57,10 @@
     min-height: 400px;
     border: 1px solid rgba(0,0,0,.1);
     background-color: transparent;
-    font-family:"Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
   }
 
   #textarea {
-    // font-family: Inconsolata, Monaco, monospace !important;
+    font-family: Inconsolata, Monaco, monospace;
     font-size: 15px;
     line-height: 1.2em;
   }
@@ -71,6 +70,7 @@
   }
 
   iframe {
+    font-family:"Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
     ul {
       -webkit-padding-start: 1em;
     }
