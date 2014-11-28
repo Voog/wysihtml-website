@@ -20600,10 +20600,10 @@ window.wysihtml5ParserRules = wysihtml5ParserRules;
 
     var getArrowState = function(scrollBottom) {
       return !(
-        (document.querySelector('.content-top').getBoundingClientRect().bottom - window.innerHeight > 0 &&
-        document.querySelector('.content-top #editor').getBoundingClientRect().bottom - window.innerHeight + 30 < 0) ||
-        (document.querySelector('.content-middle').getBoundingClientRect().bottom - window.innerHeight > 0 &&
-        document.querySelector('.content-middle .content-formatted').getBoundingClientRect().bottom - window.innerHeight + 30 < 0)
+        (document.querySelector('.content-top').getBoundingClientRect().bottom - window.innerHeight > -5 &&
+        document.querySelector('.content-top #editor').getBoundingClientRect().bottom - window.innerHeight + 30 < 5) ||
+        (document.querySelector('.content-middle').getBoundingClientRect().bottom - window.innerHeight > -5 &&
+        document.querySelector('.content-middle .content-formatted').getBoundingClientRect().bottom - window.innerHeight + 30 < 5)
       );
     };
 

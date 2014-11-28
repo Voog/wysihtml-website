@@ -37,8 +37,6 @@
   }
 
   #toolbar {
-    width: 100%;
-    max-width: 646px;
     margin-top: -40px;
     z-index: 9;
   }
@@ -52,17 +50,30 @@
     box-sizing: border-box;
   }
 
-  #textarea {
-    line-height: 1;
+  textarea, iframe {
+    line-height: 1.2em;
     width: 100%;
     max-width: 640px;
-    min-height: 380px;
+    min-height: 400px;
     border: 1px solid rgba(0,0,0,.1);
     background-color: transparent;
+    font-family:"Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  }
+
+  #textarea {
+    // font-family: Inconsolata, Monaco, monospace !important;
+    font-size: 15px;
+    line-height: 1.2em;
   }
 
   #textarea:focus {
     outline: none;
+  }
+
+  iframe {
+    ul {
+      -webkit-padding-start: 1em;
+    }
   }
 
   .wysihtml5-command-active {
@@ -187,6 +198,10 @@
 
 .wysiwyg-color-aqua {
   color: aqua;
+}
+
+[class^="wysiwyg-text-align"] {
+  line-height: 1em;
 }
 
 .wysiwyg-text-align-right {

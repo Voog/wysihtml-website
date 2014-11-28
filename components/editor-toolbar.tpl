@@ -176,7 +176,7 @@
       </g>
   </svg></button>
 
-  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-command="showSource" title="Edit HTML source"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+  <button class="edy-tb-cmd edy-tb-g" data-wysihtml5-action="change_view" title="Edit HTML source"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(0 6)" fill="#1B2124">
           <path d="M6.314 2.42l-6.314 2.433v1.547l6.314 2.433v-1.671l-3.954-1.523v-.025l3.954-1.523v-1.671z" id="Shape"></path>
           <path d="M7.896 9.568l1.41.432 3.743-9.569-1.42-.431-3.733 9.568z" id="Shape"></path>

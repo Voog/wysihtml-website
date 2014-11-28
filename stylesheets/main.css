@@ -181,8 +181,8 @@ body {
 .header .logo .text,
 .header .logo .dot,
 .header .logo .text-smaller {
-  transition: color 0.15s ease;
   -webkit-transition: color 0.15s ease;
+  transition: color 0.15s ease;
 }
 .header .gh {
   position: relative;
@@ -227,18 +227,22 @@ body {
 }
 
 @media screen and (max-width: 1086px) {
-  .header.middle {
+  .header.middle,
+  .common-page .header {
     background-color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 }
-.header.middle .logo .text {
+.header.middle .logo .text,
+.common-page .header .logo .text {
   color: #1b2124;
 }
-.header.middle .logo .dot {
+.header.middle .logo .dot,
+.common-page .header .logo .dot {
   color: #1ca2ff;
 }
-.header.middle .logo .text-smaller {
+.header.middle .logo .text-smaller,
+.common-page .header .logo .text-smaller {
   color: #85d8f8;
 }
 
@@ -2294,8 +2298,6 @@ html, body {
   outline: none;
 }
 #editor #toolbar {
-  width: 100%;
-  max-width: 646px;
   margin-top: -40px;
   z-index: 9;
 }
@@ -2307,16 +2309,24 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#editor #textarea {
-  line-height: 1;
+#editor textarea, #editor iframe {
+  line-height: 1.2em;
   width: 100%;
   max-width: 640px;
-  min-height: 380px;
+  min-height: 400px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: transparent;
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+#editor #textarea {
+  font-size: 15px;
+  line-height: 1.2em;
 }
 #editor #textarea:focus {
   outline: none;
+}
+#editor iframe ul {
+  -webkit-padding-start: 1em;
 }
 #editor .wysihtml5-command-active {
   font-weight: bold;
@@ -2434,6 +2444,10 @@ html, body {
 
 .wysiwyg-color-aqua {
   color: aqua;
+}
+
+[class^="wysiwyg-text-align"] {
+  line-height: 1em;
 }
 
 .wysiwyg-text-align-right {

@@ -2,10 +2,10 @@
 <script src="{{ site.static_asset_host }}/libs/picturefill/latest/picturefill.min.js"></script>
 
 <script>
-  window.site.editor = new wysihtml5.Editor("textarea", {
+  window.editor = new wysihtml5.Editor(document.querySelector('#textarea'), {
+    name: 'demo-editor',
     toolbar:      "toolbar",
     parserRules:  wysihtml5ParserRules,
     stylesheets: ['/stylesheets/main.min.css']
   });
 </script>
-{% endif %}

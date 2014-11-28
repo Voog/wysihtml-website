@@ -4,7 +4,7 @@
   {% include "html-head" %}
 </head>
 
-<body {% if editmode %}class="editmode"{% endif %}>
+<body class="{% if editmode %}editmode {% endif %}common-page">
   <main class="container" role="main">
 
     <section class="content-box content-middle">
