@@ -7,20 +7,41 @@
       $('[data-behavior="showstyles"] + .edy-tb-stylemenu').toggle();
       $('body').on('click', styleToolSideClick);
     });
+
     $('[data-behavior="showfontsizes"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="showfontsizes"] + .edy-tb-stylemenu').toggle();
       $('body').on('click', fontSizeToolSideClick);
     });
+
     $('[data-behavior="foreColor"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="foreColor"] + .edy-tb-color-modal').toggle();
       $('body').on('click', colorToolSideClick);
     });
+
     $('[data-behavior="createlink"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="createlink"] + .edy-popover').toggle();
       $('body').on('click', linkToolSideClick);
+    });
+
+    $('[data-behavior="showSource"]').on('click', function(event) {
+      var HTML = $.trim(editor.getValue());
+      $('#source textarea').val(HTML);
+      $('#editor, #source').toggle();
+    });
+
+    $('#source .editor-source-btns .cancel').on('click', function(event) {
+      event.preventDefault();
+      $('#editor, #source').toggle();
+    });
+
+    $('#source .editor-source-btns .update').on('click', function(event) {
+      event.preventDefault();
+      var HTML = $('#source textarea').val();
+      editor.setValue(HTML);
+      $('#editor, #source').toggle();
     });
 
     var styleToolSideClick = function(event) {
@@ -197,8 +218,6 @@
 
     $(window).on('scroll', onScroll);
 
-    initEditor();
-
     $('body').on('load', setTimeout(function() {
       $('.header').removeClass('top middle bottom').addClass(getHeaderClass());
     }, 0));
@@ -211,6 +230,7 @@
   // Enables the usage of the initiations outside this file.
   window.site = $.extend(window.site || {}, {
     initFrontPage: initFrontPage,
+    initEditor: initEditor,
     initCommonPage: initCommonPage
   });
 })(jQuery);

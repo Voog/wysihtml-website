@@ -147,8 +147,8 @@ body {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 10;
   -webkit-transition: background-color .15s ease;
   transition: background-color .15s ease;
@@ -204,17 +204,16 @@ body {
   width: 26px;
   height: 26px;
   padding: 7px 0;
-  background-image: url("/images/github-logo.png");
-  background-repeat: no-repeat;
-  background-size: 26px 26px;
-  background-position-y: 50%;
+}
+.header .gh .fork-text {
+  -webkit-transition: color .15s ease;
+  transition: color .15s ease;
+}
+.header .gh .gh-logo-container svg path {
+  -webkit-transition: fill .15s ease;
+  transition: fill .15s ease;
 }
 
-@media screen and (max-width: 1086px) {
-  .header.top {
-    background-color: rgba(133, 216, 248, 0.9);
-  }
-}
 .header.top .logo .text {
   color: #1b2124;
 }
@@ -225,12 +224,6 @@ body {
   color: #fff9c5;
 }
 
-@media screen and (max-width: 1086px) {
-  .header.middle,
-  .common-page .header {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-}
 .header.middle .logo .text,
 .common-page .header .logo .text {
   color: #1b2124;
@@ -244,11 +237,6 @@ body {
   color: #85d8f8;
 }
 
-@media screen and (max-width: 1086px) {
-  .header.bottom {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-}
 .header.bottom .logo .text {
   color: #fff;
 }
@@ -263,12 +251,11 @@ body {
   color: #fff;
 }
 
-.header.bottom .gh .gh-logo-container {
-  background-image: url("/images/github-logo-yellow.png");
+.header.bottom .gh-logo-container svg path {
+  fill: #fef9c3;
 }
 
 .scroller-arrow {
-  outline: 0;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -276,6 +263,7 @@ body {
   z-index: 100;
   width: 100%;
   text-align: center;
+  outline: 0;
 }
 @media screen and (max-width: 506px) {
   .scroller-arrow {
@@ -284,39 +272,39 @@ body {
 }
 .scroller-arrow span {
   position: relative;
+  display: inline-block;
   width: 50px;
   height: 25px;
-  display: inline-block;
 }
 .scroller-arrow span:before, .scroller-arrow span:after {
-  display: block;
-  content: "";
   position: absolute;
-  height: 4px;
-  width: 30px;
-  background: rgba(0, 0, 0, 0.9);
   left: 30px;
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 1px;
+  content: '';
 }
 .scroller-arrow span:before {
   top: 10px;
   left: 0;
-  transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .scroller-arrow span:after {
   top: 10px;
   left: 20px;
-  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .content-box {
-  padding-top: 80px;
   display: block;
   width: 100%;
   min-height: 585px;
-  padding-bottom: 20px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-size: cover;
 }
 .content-box .content-formatted {
@@ -332,6 +320,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (max-width: 750px) {
+  .content-top {
+    background-image: none;
+  }
+}
 
 .content-middle {
   background-color: #fff;
@@ -343,9 +336,9 @@ body {
 
 .content-bottom {
   position: relative;
+  min-height: initial;
   color: rgba(255, 255, 255, 0.5);
   background-color: #1c2123;
-  min-height: initial;
 }
 .content-bottom #frontpage-video {
   position: absolute;
@@ -353,11 +346,11 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 0;
   overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .content-bottom #frontpage-video .video-overlay,
 .content-bottom #frontpage-video .video-placeholder-container {
@@ -366,8 +359,8 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  display: block;
   z-index: 1;
+  display: block;
 }
 .content-bottom #frontpage-video .video-overlay {
   background-color: rgba(0, 0, 0, 0.8);
@@ -379,16 +372,16 @@ body {
   }
 }
 .content-bottom #frontpage-video video {
-  display: block;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  display: block;
   width: auto;
   height: auto;
+  min-width: 100%;
+  min-height: 100%;
   background-size: cover;
 }
 @media screen and (max-width: 752px) {
@@ -411,15 +404,15 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 .content-bottom .content-formatted {
-  display: flex;
+  position: relative;
   display: -webkit-flex;
+  display: flex;
   width: 100%;
   max-width: 750px;
   font-weight: 300;
-  flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: center;
-  position: relative;
 }
 .content-bottom .content-left,
 .content-bottom .content-right {
@@ -433,9 +426,9 @@ body {
   }
 }
 .content-bottom .supported {
+  width: 100%;
   padding-top: 100px;
   text-align: center;
-  width: 100%;
 }
 .content-bottom .supported .browser {
   display: inline-block;
@@ -457,6 +450,9 @@ body {
   background-image: url("/images/chrome.png");
   background-repeat: no-repeat;
   background-size: 37px 37px;
+}
+.svg .browser.chrome {
+  background-image: url("/assets/chrome.svg");
 }
 
 .browser.firefox {
@@ -483,6 +479,9 @@ body {
   background-repeat: no-repeat;
   background-size: 35px 37px;
 }
+.svg .browser.opera {
+  background-image: url("/assets/opera.svg");
+}
 
 .browser.safari {
   width: 38px;
@@ -491,6 +490,9 @@ body {
   background-repeat: no-repeat;
   background-size: 38px 41px;
   background-position-y: 1px !important;
+}
+.svg .browser.safari {
+  background-image: url("/assets/safari.svg");
 }
 
 .browser.mobile {
@@ -2264,15 +2266,78 @@ html, body {
   display: inline !important;
 }
 
+#source textarea {
+  width: 100%;
+  min-height: 340px;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 0;
+  font-family: Inconsolata, Monaco, Monospace;
+  font-size: 16px;
+  line-height: 20px;
+  background: #fff;
+  border: 0;
+  outline: none;
+  resize: none;
+}
+
+#source {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#source .editor-source-btns {
+  width: 100%;
+  display: block;
+  height: 45px;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+#source .editor-source-btns a {
+  margin-top: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  padding: 9px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 17px;
+  border-radius: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+#source .editor-source-btns .cancel {
+  background-color: #a1a1a1;
+}
+#source .editor-source-btns .update {
+  background-color: #19c828;
+}
+
+#source,
 #editor {
   max-width: 640px;
   margin: 50px auto 0;
 }
+
 #editor p {
   margin: 0;
 }
+#editor h1,
+#editor h2,
+#editor h3 {
+  margin: 0;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+}
+#editor h1 {
+  font-size: 75px;
+}
 #editor h2 {
-  margin-bottom: 0;
+  font-size: 60px;
+}
+#editor h3 {
+  font-size: 45px;
 }
 #editor small {
   display: block;
@@ -2287,6 +2352,11 @@ html, body {
   color: #000;
   text-decoration: underline;
   cursor: pointer;
+}
+#editor ul,
+#editor ol {
+  padding: 0 0 0 1.2em;
+  margin: 0;
 }
 #editor #toolbar [data-wysihtml5-action] {
   float: right;
@@ -2493,6 +2563,132 @@ html, body {
   .content-bottom .content-formatted .supported {
     padding-top: 50px;
   }
+}
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-javadoc {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.javascript .hljs-title,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.javascript .hljs-title,
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rules .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
 }
 
 /*# sourceMappingURL=main.css.map */

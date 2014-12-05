@@ -2,8 +2,8 @@
   @extend %clearfix;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 10;
   -webkit-transition: background-color .15s ease;
   transition: background-color .15s ease;
@@ -64,19 +64,21 @@
       width: 26px;
       height: 26px;
       padding: 7px 0;
-      background-image: url('/images/github-logo.png');
-      background-repeat: no-repeat;
-      background-size: 26px 26px;
-      background-position-y: 50%;
+    }
+
+    .fork-text {
+      -webkit-transition: color .15s ease;
+      transition: color .15s ease;
+    }
+
+    .gh-logo-container svg path {
+      -webkit-transition: fill .15s ease;
+      transition: fill .15s ease;
     }
   }
 }
 
 .header.top {
-  @media screen and (max-width: 1086px) {
-    background-color: rgba(133,216,248,.9);
-  }
-
   .logo {
     .text {
       color: #1b2124;
@@ -94,10 +96,6 @@
 
 .header.middle,
 .common-page .header {
-  @media screen and (max-width: 1086px) {
-    background-color: rgba(255,255,255,.9);
-  }
-
   .logo {
     .text {
       color: #1b2124;
@@ -114,10 +112,6 @@
 }
 
 .header.bottom {
-  @media screen and (max-width: 1086px) {
-    background-color: rgba(0,0,0,.9);
-  }
-
   .logo {
     .text {
       color: #fff;
@@ -137,6 +131,6 @@
   color: #fff;
 }
 
-.header.bottom .gh .gh-logo-container {
-  background-image: url('/images/github-logo-yellow.png');
+.header.bottom .gh-logo-container svg path {
+  fill: #fef9c3;
 }

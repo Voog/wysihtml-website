@@ -2,7 +2,7 @@
   @include query($tablet-3) {
     display: none;
   }
-  outline: 0;
+
   position: fixed;
   right: 0;
   bottom: 0;
@@ -10,46 +10,48 @@
   z-index: 100;
   width: 100%;
   text-align: center;
+  outline: 0;
   
   span {
     position: relative;
+    display: inline-block;
     width: 50px;
     height: 25px;
-    display: inline-block;
 
     &:before,
     &:after {
-      display: block;
-      content:"";
       position: absolute;
-      height: 4px;
-      width: 30px;
-      background: rgba(0,0,0,.9);
       left: 30px;
+      display: block;
+      width: 30px;
+      height: 4px;
+      background: rgba(0,0,0,.9);
       border-radius: 1px;
+      content: '';
     }
     
     &:before {
       top: 10px;
       left: 0;
-      transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
     }
+
     &:after {
       top: 10px; 
       left: 20px;
-      transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
     }
   }
 }
 
 .content-box {
-  padding-top: 80px;
   display: block;
   width: 100%;
   min-height: 585px;
-  padding-bottom: 20px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-size: cover;
 
   .content-formatted {
@@ -60,6 +62,10 @@
 }
 
 .content-top {
+  @media screen and (max-width: 750px) {
+    background-image: none;
+  }
+
   background-color: #85d8f8;
   background-image: url('/images/content-top-bg.jpg');
   background-position: 100% 50%;
@@ -78,9 +84,9 @@
 
 .content-bottom {
   position: relative;
+  min-height: initial;
   color: rgba(255,255,255,.5);
   background-color: #1c2123;
-  min-height: initial;
 
   #frontpage-video {
     position: absolute;
@@ -88,11 +94,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     z-index: 0;
     overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .video-overlay,
     .video-placeholder-container {
@@ -101,8 +107,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      display: block;
       z-index: 1;
+      display: block;
     }
 
     .video-overlay {
@@ -120,16 +126,17 @@
       @include query($tablet-2) {
         display: none !important;
       }
-      display: block;
+
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      min-width: 100%;
-      min-height: 100%;
+      display: block;
       width: auto;
       height: auto;
+      min-width: 100%;
+      min-height: 100%;
       background-size: cover;
     }
   }
@@ -153,15 +160,15 @@
   }
 
   .content-formatted {
-    display: flex;
+    position: relative;
     display: -webkit-flex;
+    display: flex;
     width: 100%;
     max-width: 750px;
     font-weight: 300;
-    flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: center;
-    position: relative;
   }
 
   .content-left,
@@ -169,14 +176,15 @@
     @include query($tablet-2) {
       width: 80%;
     }
+
     width: 315px;
     margin: 0 20px;
   }
 
   .supported {
+    width: 100%;
     padding-top: 100px;
     text-align: center;
-    width: 100%;
 
     .browser {
       display: inline-block;
@@ -196,6 +204,10 @@
 }
 
 .browser.chrome {
+  .svg & {
+    background-image: url('/assets/chrome.svg');
+  }
+
   width: 37px;
   height: 37px;
   background-image: url('/images/chrome.png');
@@ -204,6 +216,10 @@
 }
 
 .browser.firefox {
+  // .svg & {
+  //   background-image: url('/assets/firefox.svg');
+  // }
+
   width: 37px;
   height: 37px;
   background-image: url('/images/firefox.png');
@@ -212,6 +228,10 @@
 }
 
 .browser.ie {
+  // .svg & {
+  //   background-image: url('/assets/ie.svg');
+  // }
+
   width: 40px;
   height: 39px;
   background-image: url('/images/ie.png');
@@ -221,6 +241,10 @@
 }
 
 .browser.opera {
+  .svg & {
+    background-image: url('/assets/opera.svg');
+  }
+
   width: 35px;
   height: 37px;
   background-image: url('/images/opera.png');
@@ -229,6 +253,10 @@
 }
 
 .browser.safari {
+  .svg & {
+    background-image: url('/assets/safari.svg');
+  }
+
   width: 38px;
   height: 41px;
   background-image: url('/images/safari.png');
@@ -238,6 +266,10 @@
 }
 
 .browser.mobile {
+  // .svg & {
+  //   background-image: url('/assets/mobile.svg');
+  // }
+
   width: 25px;
   height: 44px;
   background-image: url('/images/mobile.png');

@@ -24,5 +24,8 @@
 
   {% include "javascripts" %}
   <script type="text/javascript">site.initFrontPage();</script>
+  {% unless editmode %}
+  <script type="text/javascript">site.initEditor();</script>
+  {% endunless %}
 </body>
 </html>

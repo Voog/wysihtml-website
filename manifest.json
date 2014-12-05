@@ -100,15 +100,45 @@
   "assets": [
     {
       "content_type": "image/svg+xml",
+      "file": "assets/chrome.svg",
+      "kind": "assets",
+      "filename": "chrome.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/github.svg",
+      "kind": "assets",
+      "filename": "github.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/opera.svg",
+      "kind": "assets",
+      "filename": "opera.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/safari.svg",
+      "kind": "assets",
+      "filename": "safari.svg"
     },
     {
       "content_type": "application/x-wais-source",
       "file": "assets/src",
       "kind": "assets",
       "filename": "src"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "images/.DS_Store",
+      "kind": "images",
+      "filename": ".DS_Store"
     },
     {
       "content_type": "image/png",
@@ -235,12 +265,6 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
       "filename": "main.css"
-    },
-    {
-      "content_type": "text/unknown",
-      "file": "stylesheets/main.css.map",
-      "kind": "stylesheets",
-      "filename": "main.css.map"
     },
     {
       "content_type": "text/css",
