@@ -20,6 +20,18 @@
       $('body').on('click', colorToolSideClick);
     });
 
+    $('[data-wysihtml5-command="foreColor').on('click', function(event) {
+      event.stopPropagation();
+      var colorValue = $(event.target).data('value');
+      if (colorValue) {
+        editor.composer.commands.exec("foreColorStyle", colorValue);
+        setTimeout(function() {
+          setColorToolBackground();
+          setColorToolForeground();
+      }, 0);
+      }
+    });
+
     $('[data-behavior="createlink"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="createlink"] + .edy-popover').toggle();
@@ -80,22 +92,6 @@
       }
     };
 
-    var fontSizeCmd = function fontSizeCmd(event) {
-      var options = $(event.target).closest('.edy-tb-size-btn').data('wysihtml5-command-value');
-      var fontSize;
-      if (restoreSelection()) {
-        if (options === '+' || options === '-') {
-          fontSize = Math.round(getSelectionFontSize()) + ((options === '-') ? -1 : 1);
-          editor.composer.commands.exec('fontSizeStyle', fontSize + 'px');
-        } else {
-          fontSize = parseFloat(options);
-          if (getSelectionFontSize() !== fontSize) {
-            editor.composer.commands.exec('fontSizeStyle', fontSize + 'px');
-          }
-        }
-      }
-    };
-
     var getSelectionFontSize = function() {
       var size = editor.composer.commands.stateValue('fontSizeStyle');
 
@@ -127,11 +123,35 @@
       return false;
     };
 
+    var calculateColorLightness = function(rgbString) {
+      if (rgbString) {
+        var rgb = rgbString.match(/rgb\((\d+,\d+,\d+)\)/)[1].split(',');
+        return Math.round(((+rgb[0]) * 0.2126 + (+rgb[1]) * 0.7152 + (+rgb[2]) * 0.0722) / 2.55) / 100;
+      } else {
+        return 1;
+      }
+    };
+
+    var setColorToolBackground = function() {
+      var foreColorStyle = editor.composer.commands.stateValue('foreColorStyle');
+      $('[data-behavior="foreColor"] svg circle').css('fill', foreColorStyle || 'transparent');
+    };
+
+    var setColorToolForeground = function() {
+      var foreColorStyle = editor.composer.commands.stateValue('foreColorStyle'),
+          lightness = calculateColorLightness(foreColorStyle),
+          color = (lightness < 0.6) ? 'rgba(255,255,255,.9)' : 'rgba(0,0,0,.9)';
+
+      $('[data-behavior="foreColor"] svg path').eq(0).css('color', color);
+    };
+
     $('#textarea').on('mouseup blur', function(event) {
       editor.selBookmark = editor.composer.selection.getBookmark();
+      setTimeout(function() {
+        setColorToolBackground();
+        setColorToolForeground();
+      }, 0);
     });
-
-    $('#toolbar').on('mouseup', '.edy-tb-size-btn', fontSizeCmd);
   };
 
   var initFrontPage = function() {

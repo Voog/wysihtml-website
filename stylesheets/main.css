@@ -1265,7 +1265,7 @@ html, body {
 }
 
 .edy-colorpicker .edy-colorpicker-colors {
-  width: 204px;
+  width: 153px;
   margin: 0 -1px;
 }
 
@@ -2329,6 +2329,7 @@ html, body {
   margin: 0;
   margin-bottom: 0.5em;
   line-height: 1em;
+  font-weight: 500;
 }
 #editor h1 {
   font-size: 75px;
@@ -2380,6 +2381,7 @@ html, body {
 }
 #editor #textarea {
   line-height: 1.2em;
+  font-weight: 500;
   width: 100%;
   max-width: 640px;
   min-height: 400px;
@@ -2397,6 +2399,7 @@ html, body {
 }
 #editor .wysihtml5-command-active {
   font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 #editor [data-wysihtml5-dialog] {
   margin: 5px 0 0;
@@ -2480,6 +2483,10 @@ html, body {
   color: olive;
 }
 
+.wysiwyg-color-sand {
+  color: #fff9c5;
+}
+
 .wysiwyg-color-yellow {
   color: yellow;
 }
@@ -2490,6 +2497,10 @@ html, body {
 
 .wysiwyg-color-blue {
   color: blue;
+}
+
+.wysiwyg-color-skyblue {
+  color: #00a2ff;
 }
 
 .wysiwyg-color-teal {
@@ -2536,6 +2547,10 @@ html, body {
 
 .wysiwyg-clear-left {
   clear: left;
+}
+
+.colorpicker-color-bordered {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 [data-behavior="createlink"] + .edy-popover {

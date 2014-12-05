@@ -61,22 +61,24 @@
       <div class="edy-tb-color-tab-content">
         <div class="edy-colorpicker">
           <div class="edy-colorpicker-colors" data-wysihtml5-command-group="foreColor">
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value style="border:1px solid #ccc;"><svg width="100%" height="100%" class="no-color"><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:rgba(255,0,0,0.8);stroke-width:1;"></line></svg></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="white" style="background-color: white"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver" style="background-color: silver"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray" style="background-color: gray"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="aqua" style="background-color: aqua"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" style="background-color: blue"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy" style="background-color: navy"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="teal" style="background-color: teal"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" style="background-color: green"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="lime" style="background-color: lime"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="yellow" style="background-color: yellow"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive" style="background-color: olive"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon" style="background-color: maroon"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" style="background-color: red"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="fuchsia" style="background-color: fuchsia"></div>
-            <div data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple" style="background-color: purple"></div>
+            <div data-wysihtml5-command="foreColor" data-value style="border:1px solid #ccc;"><svg width="100%" height="100%" class="no-color"><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:rgba(255,0,0,0.8);stroke-width:1;"></line></svg></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(255,255,255)" style="background-color: rgb(255,255,255);" class="colorpicker-color-bordered"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(192,192,192)" style="background-color: rgb(192,192,192);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(128,128,128)" style="background-color: rgb(128,128,128);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,255,255)" style="background-color: rgb(0,255,255);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0, 162, 255)" style="background-color: rgb(0, 162, 255);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,0,255)" style="background-color: rgb(0,0,255);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,0,128)" style="background-color: rgb(0,0,128);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,128,128)" style="background-color: rgb(0,128,128);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,128,0)" style="background-color: rgb(0,128,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,255,0)" style="background-color: rgb(0,255,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(255,255,0)" style="background-color: rgb(255,255,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(255,249,197)" style="background-color: rgb(255,249,197);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(128,128,0)" style="background-color: rgb(128,128,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(128,0,0)" style="background-color: rgb(128,0,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(255,0,0)" style="background-color: rgb(255,0,0);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(255,0,255)" style="background-color: rgb(255,0,255);"></div>
+            <div data-wysihtml5-command="foreColor" data-value="rgb(128,0,128)" style="background-color: rgb(128,0,128);"></div>
           </div>
         </div>
       </div>
