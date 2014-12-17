@@ -1,10 +1,10 @@
 <div class="header top">
-    <a href="{{ page.parent.url }}" class="logo top">
-        <span class="text">wysihtml</span><span class="dot">.</span>
-        <span class="text-smaller">Curated by Voog</span>
-    </a>
+    <div class="logo top">
+        <a href="http://wysihtml.com" class="text">wysihtml</a><span class="dot">.</span>
+        <a href="http://voog.com" class="text-smaller">Curated by Voog</a>
+    </div>
 
-    <a class="gh" href="https://github.com/Edicy/wysihtml5">
+    <a class="gh" href="https://github.com/Voog/wysihtml">
         <div class="fork-text">Fork me on Github</div>
         <div class="gh-logo-container">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">

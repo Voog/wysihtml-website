@@ -6,7 +6,7 @@
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
-  padding:5px;
+  padding:10px;
   margin:0;
   font-family:Inconsolata, Monaco, Monospace;
   font-size:16px;
@@ -84,6 +84,20 @@
     font-size: 45px;
   }
 
+  @include query($tablet-3) {
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
   small {
     display: block;
     margin-top: 40px;
@@ -121,6 +135,9 @@
   }
 
   #toolbar {
+    @include query(380px) {
+      margin-left: -20px;
+    }
     margin-top: -30px;
     z-index: 9;
   }

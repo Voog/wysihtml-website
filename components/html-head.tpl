@@ -13,6 +13,7 @@
 {% stylesheet_link "main.min.css" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css" %}<![endif]-->
 
+{% capture page_title %}{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}{% endcapture %}
 <title>{{ page_title }}</title>
 
 {% include "open-graph" %}

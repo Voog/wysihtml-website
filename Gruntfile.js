@@ -18,8 +18,8 @@ module.exports = function(grunt) {
           'concat/backstretch.js': 'jquery-backstretch/jquery.backstretch.js',
           'concat/jquery.js': 'jquery/jquery.js',
           'concat/overthrow.js': 'overthrow/src/overthrow-polyfill.js',
-          'concat/wysihtml5.js': 'wysihtml5x/dist/wysihtml5x.js',
-          'concat/wysihtml5-toolbar.js': 'wysihtml5x/dist/wysihtml5x-toolbar.js',
+          'concat/wysihtml.js': 'wysihtml/dist/wysihtml.js',
+          'concat/wysihtml-toolbar.js': 'wysihtml/dist/wysihtml-toolbar.js',
           'modernizr.js': 'modernizr/modernizr.js'
         }
       },

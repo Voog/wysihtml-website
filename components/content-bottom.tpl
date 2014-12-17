@@ -9,4 +9,5 @@
         <div class="browser safari">Safari <br>4+</div>
         <div class="browser mobile">Mobile <br>(all)</div>
     </div>
+    <div class="disclaimer">Wysihtml is an open source project curated by the <a href="http://voog.com">Voog</a> team</div>
 </section>

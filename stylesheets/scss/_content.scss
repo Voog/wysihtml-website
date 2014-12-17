@@ -49,15 +49,15 @@
 .content-box {
   display: block;
   width: 100%;
-  min-height: 585px;
+  min-height: 545px;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   background-size: cover;
 
   .content-formatted {
     width: 100%;
     max-width: 750px;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
   }
 }
 
@@ -87,6 +87,7 @@
   min-height: initial;
   color: rgba(255,255,255,.5);
   background-color: #1c2123;
+  padding-bottom: 20px;
 
   #frontpage-video {
     position: absolute;
@@ -165,9 +166,10 @@
     display: flex;
     width: 100%;
     max-width: 750px;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-justify-content: center;
     justify-content: center;
   }
 
@@ -182,6 +184,9 @@
   }
 
   .supported {
+    @media screen and (max-width: 360px) {
+      max-width: 210px
+    }
     width: 100%;
     padding-top: 100px;
     text-align: center;
@@ -198,6 +203,9 @@
     }
 
     .browser + .browser {
+      @include query($mobile-2) {
+        margin-left: 0;
+      }
       margin-left: 5px;
     }
   }
@@ -216,9 +224,9 @@
 }
 
 .browser.firefox {
-  // .svg & {
-  //   background-image: url('/assets/firefox.svg');
-  // }
+  .svg & {
+    background-image: url('/assets/firefox.svg');
+  }
 
   width: 37px;
   height: 37px;
@@ -228,9 +236,9 @@
 }
 
 .browser.ie {
-  // .svg & {
-  //   background-image: url('/assets/ie.svg');
-  // }
+  .svg & {
+    background-image: url('/assets/ie.svg');
+  }
 
   width: 40px;
   height: 39px;
@@ -266,9 +274,9 @@
 }
 
 .browser.mobile {
-  // .svg & {
-  //   background-image: url('/assets/mobile.svg');
-  // }
+  .svg & {
+    background-image: url('/assets/mobile.svg');
+  }
 
   width: 25px;
   height: 44px;
@@ -276,4 +284,15 @@
   background-repeat: no-repeat;
   background-size: 25px 44px;
   background-position-y: 1px !important;
+}
+
+.disclaimer {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.disclaimer a {
+  color: rgb(91,153,174);
+  text-decoration: none;
+  box-shadow: none;
 }

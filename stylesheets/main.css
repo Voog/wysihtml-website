@@ -117,6 +117,10 @@ body {
   margin-top: 25px;
 }
 
+.content-bottom .content-formatted .content-left a,
+.content-bottom .content-formatted .content-right a {
+  box-shadow: inset 0 -4px 0 rgba(133, 216, 248, 0.75);
+}
 .content-bottom .content-formatted h1, .content-bottom .content-formatted h2, .content-bottom .content-formatted h3, .content-bottom .content-formatted p {
   padding: 0;
   line-height: 1.2;
@@ -125,7 +129,7 @@ body {
   color: #fffac4;
 }
 .content-bottom .content-formatted p {
-  color: white;
+  color: #fff;
   font-size: 1.2em;
 }
 .content-bottom .content-formatted ul {
@@ -159,7 +163,6 @@ body {
   width: 142px;
   height: 40px;
   padding: 20px 0 20px 20px;
-  text-decoration: none;
 }
 .header .logo .text,
 .header .logo .dot {
@@ -167,9 +170,12 @@ body {
   font-size: 30px;
   font-weight: 700;
   line-height: 1em;
+  text-decoration: none;
 }
 .header .logo .text-smaller {
   position: absolute;
+  display: inline;
+  text-decoration: none;
   right: 8px;
   bottom: 23px;
   font-family: 'Georgia', serif;
@@ -188,7 +194,7 @@ body {
   position: relative;
   float: right;
   height: 40px;
-  padding: 20px 10px 20px 0;
+  padding: 20px 20px 20px 0;
 }
 .header .gh .fork-text {
   float: left;
@@ -302,15 +308,15 @@ body {
 .content-box {
   display: block;
   width: 100%;
-  min-height: 585px;
+  min-height: 545px;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   background-size: cover;
 }
 .content-box .content-formatted {
   width: 100%;
   max-width: 750px;
-  margin: 40px auto 0;
+  margin: 40px auto 40px;
 }
 
 .content-top {
@@ -339,6 +345,7 @@ body {
   min-height: initial;
   color: rgba(255, 255, 255, 0.5);
   background-color: #1c2123;
+  padding-bottom: 20px;
 }
 .content-bottom #frontpage-video {
   position: absolute;
@@ -409,9 +416,10 @@ body {
   display: flex;
   width: 100%;
   max-width: 750px;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 .content-bottom .content-left,
@@ -430,6 +438,11 @@ body {
   padding-top: 100px;
   text-align: center;
 }
+@media screen and (max-width: 360px) {
+  .content-bottom .supported {
+    max-width: 210px;
+  }
+}
 .content-bottom .supported .browser {
   display: inline-block;
   width: 50px;
@@ -442,6 +455,11 @@ body {
 }
 .content-bottom .supported .browser + .browser {
   margin-left: 5px;
+}
+@media screen and (max-width: 420px) {
+  .content-bottom .supported .browser + .browser {
+    margin-left: 0;
+  }
 }
 
 .browser.chrome {
@@ -462,6 +480,9 @@ body {
   background-repeat: no-repeat;
   background-size: 37px 37px;
 }
+.svg .browser.firefox {
+  background-image: url("/assets/firefox.svg");
+}
 
 .browser.ie {
   width: 40px;
@@ -470,6 +491,9 @@ body {
   background-repeat: no-repeat;
   background-size: 40px 39px;
   background-position-y: 3px !important;
+}
+.svg .browser.ie {
+  background-image: url("/assets/ie.svg");
 }
 
 .browser.opera {
@@ -502,6 +526,20 @@ body {
   background-repeat: no-repeat;
   background-size: 25px 44px;
   background-position-y: 1px !important;
+}
+.svg .browser.mobile {
+  background-image: url("/assets/mobile.svg");
+}
+
+.disclaimer {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.disclaimer a {
+  color: #5b99ae;
+  text-decoration: none;
+  box-shadow: none;
 }
 
 html, body {
@@ -2273,7 +2311,7 @@ html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 10px;
   margin: 0;
   font-family: Inconsolata, Monaco, Monospace;
   font-size: 16px;
@@ -2322,6 +2360,7 @@ html, body {
 
 #editor p {
   margin: 0;
+  font-weight: 500;
 }
 #editor h1,
 #editor h2,
@@ -2340,10 +2379,22 @@ html, body {
 #editor h3 {
   font-size: 45px;
 }
+@media screen and (max-width: 506px) {
+  #editor h1 {
+    font-size: 50px;
+  }
+  #editor h2 {
+    font-size: 40px;
+  }
+  #editor h3 {
+    font-size: 30px;
+  }
+}
 #editor small {
   display: block;
   margin-top: 40px;
   font-size: 9px;
+  font-weight: 500;
 }
 #editor small,
 #editor small a {
@@ -2371,6 +2422,11 @@ html, body {
 #editor #toolbar {
   margin-top: -30px;
   z-index: 9;
+}
+@media screen and (max-width: 380px) {
+  #editor #toolbar {
+    margin-left: -20px;
+  }
 }
 #editor #toolbar,
 #editor #textarea {

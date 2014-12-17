@@ -106,6 +106,12 @@
     },
     {
       "content_type": "image/svg+xml",
+      "file": "assets/firefox.svg",
+      "kind": "assets",
+      "filename": "firefox.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/github.svg",
       "kind": "assets",
       "filename": "github.svg"
@@ -115,6 +121,18 @@
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ie.svg",
+      "kind": "assets",
+      "filename": "ie.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/mobile.svg",
+      "kind": "assets",
+      "filename": "mobile.svg"
     },
     {
       "content_type": "image/svg+xml",
@@ -229,6 +247,12 @@
       "file": "images/video-placeholder.png",
       "kind": "images",
       "filename": "video-placeholder.png"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/wysihtml-og.jpg",
+      "kind": "images",
+      "filename": "wysihtml-og.jpg"
     },
     {
       "content_type": "application/javascript",

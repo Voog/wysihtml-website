@@ -2,6 +2,14 @@
   'use strict';
 
   var initEditor = function() {
+    window.editor = new wysihtml5.Editor(document.querySelector('#textarea'), {
+      name: 'demo-editor',
+      style: false,
+      toolbar: "toolbar",
+      parserRules:  wysihtml5ParserRules,
+      stylesheets: ['/stylesheets/main.min.css']
+    });
+
     $('[data-behavior="showstyles"]').on('click', function(event) {
       event.stopPropagation();
       $('[data-behavior="showstyles"] + .edy-tb-stylemenu').toggle();
@@ -20,7 +28,7 @@
       $('body').on('click', colorToolSideClick);
     });
 
-    $('[data-wysihtml5-command="foreColor').on('click', function(event) {
+    $('[data-wysihtml5-command="foreColor"]').on('click', function(event) {
       event.stopPropagation();
       var colorValue = $(event.target).data('value');
       if (colorValue) {
@@ -171,7 +179,7 @@
       var $parent = $('.content-' + getCurrentBox()),
           $target = $parent.next('.content-box');
 
-      $('body').animate({scrollTop: $target.offset().top + 'px'});
+      $('body,html').animate({scrollTop: $target.offset().top + 'px'});
     });
 
     var latestKnownScrollY,

@@ -44,8 +44,8 @@
       <button class="edy-tb-cmd wysiwyg-font-size-small" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="small" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:16px;">small</button>
       <button class="edy-tb-cmd wysiwyg-font-size-medium" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="medium" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:18px;;">medium</button>
       <button class="edy-tb-cmd wysiwyg-font-size-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:20px;">large</button>
-      <button class="edy-tb-cmd wysiwyg-font-size-x-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="x-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:25px;">x-large</button>
-      <button class="edy-tb-cmd wysiwyg-font-size-xx-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="xx-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px;">xx-large</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-x-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="x-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:23px;">x-large</button>
+      <button class="edy-tb-cmd wysiwyg-font-size-xx-large" data-wysihtml5-command="fontSize" data-wysihtml5-command-value="xx-large" style="font-weight: 300; font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:25px;">xx-large</button>
     </div>
   </div>
   <div class="edy-tb-menucontainer">
