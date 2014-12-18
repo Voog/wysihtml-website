@@ -119,7 +119,8 @@ body {
 
 .content-bottom .content-formatted .content-left a,
 .content-bottom .content-formatted .content-right a {
-  box-shadow: inset 0 -4px 0 rgba(133, 216, 248, 0.75);
+  color: #5b99ae;
+  box-shadow: none;
 }
 .content-bottom .content-formatted h1, .content-bottom .content-formatted h2, .content-bottom .content-formatted h3, .content-bottom .content-formatted p {
   padding: 0;
