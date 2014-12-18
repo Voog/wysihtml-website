@@ -2358,6 +2358,22 @@ html, body {
   margin: 50px auto 0;
 }
 
+#editor {
+  position: relative;
+}
+#editor .advanced-demo {
+  position: absolute;
+  right: 0;
+  line-height: 15px;
+  top: -22px;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+#editor .advanced-demo:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
 #editor p {
   margin: 0;
   font-weight: 500;
@@ -2401,7 +2417,7 @@ html, body {
   color: #666;
 }
 #editor a {
-  color: #000;
+  color: #00a1ff;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -2453,14 +2469,9 @@ html, body {
 #editor iframe body ul {
   margin: 0.5em !important;
 }
-#editor .wysihtml5-command-active {
+#editor .edy-tb-cmd.wysihtml5-command-active {
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.05);
-}
-#editor [data-wysihtml5-dialog] {
-  margin: 5px 0 0;
-  padding: 5px;
-  border: 1px solid #666;
 }
 
 [class^="wysiwyg-font-size"] {
@@ -2609,8 +2620,95 @@ html, body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-[data-behavior="createlink"] + .edy-popover {
+[data-wysihtml5-command="createLink"] + .edy-popover {
+  top: 25px;
+  position: absolute !important;
+  z-index: 30000 !important;
+  font-size: 14px;
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-weight: normal;
+  line-height: 1em;
+  color: #1b2124;
+  text-align: left !important;
+  width: 400px;
+}
+[data-wysihtml5-command="createLink"] + .edy-popover .edy-popover-content {
+  border-radius: 2px !important;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) !important;
+}
+[data-wysihtml5-command="createLink"] + .edy-popover .edy-tibtn-container {
   position: relative;
+  line-height: 0;
+}
+[data-wysihtml5-command="createLink"] + .edy-popover .edy-itempicker .edy-itempicker-input-btns {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+}
+[data-wysihtml5-command="createLink"] + .edy-popover button {
+  height: 100%;
+  vertical-align: middle;
+  background-color: #22b02e;
+  padding: 9px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 17px;
+  cursor: pointer;
+  border-radius: 2px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: none;
+  border: 0;
+  outline: none;
+}
+[data-wysihtml5-command="createLink"] + .edy-popover input {
+  padding: 14px;
+  font-weight: 600;
+  box-sizing: border-box;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  resize: none;
+  -webkit-appearance: none;
+}
+
+.wysihtml5-command-dialog-opened + .edy-popover {
+  display: block !important;
+}
+
+[data-wysihtml5-command="createLink"].wysihtml5-command-active + .edy-popover [data-wysihtml5-command="removeLink"] {
+  display: block;
+}
+
+[data-wysihtml5-command="createLink"]:not(.wysihtml5-command-active) + .edy-popover [data-wysihtml5-command="removeLink"] {
+  display: none;
+}
+
+[data-wysihtml5-command="createLink"].wysihtml5-command-active + .edy-popover button[data-wysihtml5-dialog-action="save"] {
+  display: none;
+}
+
+[data-wysihtml5-command="createLink"]:not(.wysihtml5-command-active) + .edy-popover button[data-wysihtml5-dialog-action="save"] {
+  display: block;
+}
+
+.edy-tb-menucontainer.createlink .edy-popover {
   top: 25px;
 }
 
@@ -2624,6 +2722,9 @@ html, body {
     padding: 0 20px;
     width: auto;
   }
+  .content-box #editor .advanced-demo {
+    margin-right: 20px;
+  }
   .content-box .toolbar {
     width: 100%;
   }
@@ -2633,6 +2734,11 @@ html, body {
   }
   .content-bottom .content-formatted .supported {
     padding-top: 50px;
+  }
+}
+@media (max-width: 530px) {
+  #editor .advanced-demo {
+    display: none;
   }
 }
 /*

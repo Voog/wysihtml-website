@@ -1,5 +1,6 @@
 <div id="editor">
   {% include "editor-toolbar" %}
+  <a class="advanced-demo" href="http://voog.github.io/wysihtml/examples/advanced.html" target="_blank">Advanced</a>
   <div id="textarea">
     {% include "editor-content" %}
   </div>

@@ -9,6 +9,10 @@
       width: auto;
     }
 
+    #editor .advanced-demo {
+      margin-right: 20px;
+    }
+
     .toolbar {
       width: 100%;
     }
@@ -21,5 +25,11 @@
     .content-formatted .supported {
       padding-top: 50px;
     }
+  }
+}
+
+@media (max-width: 530px) {
+  #editor .advanced-demo {
+    display: none;
   }
 }

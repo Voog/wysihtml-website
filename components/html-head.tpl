@@ -10,7 +10,7 @@
 
 <script src="{{ javascripts_path }}/modernizr.js"></script>
 
-{% stylesheet_link "main.min.css" %}
+{% stylesheet_link "main.min.css?2" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css" %}<![endif]-->
 
 {% capture page_title %}{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}{% endcapture %}

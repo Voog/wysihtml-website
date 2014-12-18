@@ -40,9 +40,15 @@
       }
     });
 
-    $('[data-behavior="createlink"]').on('click', function(event) {
-      event.stopPropagation();
-      $('[data-behavior="createlink"] + .edy-popover').toggle();
+    var dialog = new wysihtml5.toolbar.Dialog(
+      document.querySelector("[data-wysihtml5-command='createLink']"),
+      document.querySelector("[data-wysihtml5-dialog='createLink']")
+    );
+    dialog.observe("cancel", function(attributes) {
+      console.log("!", attributes);
+    });
+
+    $('[data-behavior="createLink"]').on('click', function(event) {
       $('body').on('click', linkToolSideClick);
     });
 
@@ -85,8 +91,8 @@
     var linkToolSideClick = function(event) {
       event.stopPropagation();
       var $target = $(event.target);
-      if (!(document.querySelector('[data-behavior="createlink"] + .edy-popover').contains(event.target))) {
-        $('[data-behavior="createlink"] + .edy-popover').hide(); 
+      if (!(document.querySelector('[data-wysihtml5-command="createLink"] + .edy-popover').contains(event.target))) {
+        $('[data-wysihtml5-command="createLink"] + .edy-popover').hide(); 
         $('body').off('click', linkToolSideClick);
       }
     };

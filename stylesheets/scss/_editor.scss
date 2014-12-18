@@ -58,6 +58,23 @@
 }
 
 #editor {
+  position: relative;
+
+  .advanced-demo {
+    position: absolute;
+    right: 0;
+    line-height: 15px;
+    top: -22px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 400;
+    color: rgba(0,0,0,.9);
+
+    &:hover {
+      color: rgba(0,0,0,.75);
+    }
+  }
+
   p {
     margin: 0;
     font-weight: 500;
@@ -111,7 +128,7 @@
   }
 
   a {
-    color: #000;
+    color: rgb(0, 161, 255);;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -171,15 +188,9 @@
     }
   }
 
-  .wysihtml5-command-active {
+  .edy-tb-cmd.wysihtml5-command-active {
     font-weight: bold;
     background-color: rgba(0,0,0,.05);
-  }
-
-  [data-wysihtml5-dialog] {
-    margin: 5px 0 0;
-    padding: 5px;
-    border: 1px solid #666;
   }
 }
 
@@ -329,7 +340,101 @@
   border: 1px solid rgba(0,0,0,.1);
 }
 
-[data-behavior="createlink"] + .edy-popover {
-  position: relative;
+[data-wysihtml5-command="createLink"] + .edy-popover {
   top: 25px;
+  position: absolute !important;
+  z-index: 30000 !important;
+  font-size: 14px;
+  font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+  font-weight: normal;
+  line-height: 1em;
+  color: #1b2124;
+  text-align: left !important;
+  width: 400px;
+
+  .edy-popover-content {
+    border-radius: 2px !important;
+    overflow: hidden;
+    background: rgba(255,255,255,0.95) !important;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5) !important;
+  }
+
+  .edy-tibtn-container {
+    position: relative;
+    line-height: 0;
+  }
+
+  .edy-itempicker .edy-itempicker-input-btns {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+  }
+
+  button {
+    height: 100%;
+    vertical-align: middle;
+    background-color: #22b02e;
+    padding: 9px 14px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 17px;
+    cursor: pointer;
+    border-radius: 2px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+    border: 0;
+    outline: none;
+  }
+
+  input {
+    padding: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    font-family: "Avenir Next", "AvenirX", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+  }
+}
+
+.wysihtml5-command-dialog-opened + .edy-popover {
+  display: block !important;
+}
+
+[data-wysihtml5-command="createLink"].wysihtml5-command-active + .edy-popover [data-wysihtml5-command="removeLink"] {
+  display: block;
+}
+
+[data-wysihtml5-command="createLink"]:not(.wysihtml5-command-active) + .edy-popover [data-wysihtml5-command="removeLink"] {
+  display: none;
+}
+
+[data-wysihtml5-command="createLink"].wysihtml5-command-active + .edy-popover button[data-wysihtml5-dialog-action="save"] {
+  display: none;
+}
+
+[data-wysihtml5-command="createLink"]:not(.wysihtml5-command-active) + .edy-popover button[data-wysihtml5-dialog-action="save"] {
+  display: block;
+}
+
+.edy-tb-menucontainer.createlink {
+  .edy-popover {
+    top: 25px;
+  }
 }
