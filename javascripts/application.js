@@ -22123,6 +22123,7 @@ wysihtml5.Commands = Base.extend(
 
   wysihtml5.commands.foreColorStyle = {
     exec: function(composer, command, color) {
+      console.log(color);
       var colorVals  = wysihtml5.quirks.styleParser.parseColor((typeof(color) == "object") ? "color:" + color.color : "color:" + color, "color"),
           colString;
 
@@ -26082,6 +26083,23 @@ wysihtml5.views.View = Base.extend(
 
       $('[data-behavior="foreColor"] svg path').eq(0).css('color', color);
     };
+
+    var updateStates = function() {
+      if (editor.composer.commands.state('foreColorStyle')) {
+        $('edy-tb-color').addClass('active');
+        value = editor.composer.commands.stateValue('foreColorStyle');
+        $('.color-btn.active').removeClass('active');
+        if (value) {
+          $('.color-btn[data-value="'+ value +'"]').addClass('active');
+        }
+        
+        $('edy-tb-colors').show();
+        
+      } else {
+        $('edy-tb-color').removeClass('active');
+        $('#colorBtns').hide();
+      }
+    }
 
     $('#textarea').on('mouseup blur', function(event) {
       editor.selBookmark = editor.composer.selection.getBookmark();

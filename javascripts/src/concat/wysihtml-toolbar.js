@@ -11254,6 +11254,7 @@ wysihtml5.Commands = Base.extend(
 
   wysihtml5.commands.foreColorStyle = {
     exec: function(composer, command, color) {
+      console.log(color);
       var colorVals  = wysihtml5.quirks.styleParser.parseColor((typeof(color) == "object") ? "color:" + color.color : "color:" + color, "color"),
           colString;
 

@@ -2445,6 +2445,9 @@ html, body {
     margin-left: -20px;
   }
 }
+#editor #toolbar .no-color {
+  pointer-events: none;
+}
 #editor #toolbar,
 #editor #textarea {
   -webkit-box-sizing: border-box;

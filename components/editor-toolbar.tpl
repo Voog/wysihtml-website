@@ -12,9 +12,6 @@
   </svg>
   </button>
   <button class="edy-tb-cmd" data-wysihtml5-command="underline" title="Underline"><svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-    <title>
-      Slice 1
-    </title>
     <g transform="translate(6 5)" fill="#1B2124">
       <path d="M9.141-.5h-2.271v4.791c0 .291-.042.578-.132.862-.09.284-.217.535-.387.752-.17.219-.391.397-.662.536-.27.14-.581.209-.934.209-.365 0-.659-.072-.878-.217-.221-.146-.394-.33-.52-.554-.127-.223-.209-.475-.247-.754-.038-.278-.057-.544-.057-.798v-4.827h-2.268v5.444c0 .447.062.882.189 1.306.126.424.324.799.595 1.125.272.327.618.591 1.041.791.422.199.929.299 1.521.299.68 0 1.27-.168 1.768-.499.498-.333.849-.718 1.051-1.153h.037v1.397h2.154v-8.71z"></path>
       <rect y="11" width="11" height=".908"></rect>
@@ -60,8 +57,8 @@
     <div class="edy-tb-dropdown edy-tb-color-modal" style="display: none;">
       <div class="edy-tb-color-tab-content">
         <div class="edy-colorpicker">
-          <div class="edy-colorpicker-colors" data-wysihtml5-command-group="foreColor">
-            <div data-wysihtml5-command="foreColor" data-value style="border:1px solid #ccc;"><svg width="100%" height="100%" class="no-color"><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:rgba(255,0,0,0.8);stroke-width:1;"></line></svg></div>
+          <div class="edy-colorpicker-colors">
+            <div data-wysihtml5-command="foreColor" data-value="rgb(0,0,0)" style="border:1px solid #ccc;"><svg width="100%" height="100%" class="no-color"><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:rgba(255,0,0,0.8);stroke-width:1;"></line></svg></div>
             <div data-wysihtml5-command="foreColor" data-value="rgb(255,255,255)" style="background-color: rgb(255,255,255);" class="colorpicker-color-bordered"></div>
             <div data-wysihtml5-command="foreColor" data-value="rgb(192,192,192)" style="background-color: rgb(192,192,192);"></div>
             <div data-wysihtml5-command="foreColor" data-value="rgb(128,128,128)" style="background-color: rgb(128,128,128);"></div>

@@ -159,6 +159,10 @@
     z-index: 9;
   }
 
+  #toolbar .no-color {
+    pointer-events: none;
+  }
+
   #toolbar,
   #textarea {
     -webkit-box-sizing: border-box;
