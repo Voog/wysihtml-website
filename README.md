@@ -1,11 +1,7 @@
-#The Pripyat (basic boilerplate) design template for Voog
+#Wysihtml demo site source code
 
-To modify this template [Node.js](http://www.nodejs.org/), [Node Package Manager](https://www.npmjs.org/), [Grunt](http://www.gruntjs.com/) and [Bower](http://www.bower.io/) must be installed.
+This is the source code of the [Wysihtml demo site](http://wysihtml.com) – built with [Voog](http://voog.com).
 
-To set up the local developing environment, clone this repository and run the following commands:
+[Wysihtml](github.com/Voog/wysihtml) is an Open Source, community-developed rich text editor curated by the [Voog](http://voog.com) team.
 
-* Install Grunt dependencies: ```npm install```
-* Install Bower dependencies: ```bower install```
-* Run Grunt tasks: ```grunt```
-
-To watch and update modified files in real time start the Grunt watcher task: ```grunt watch```
+[Voog](http://voog.com) is a tool to build completely customized multilingual websites.
