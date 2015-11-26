@@ -29,9 +29,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/bg-video.tpl",
-      "layout_name": "bg-video",
-      "title": "bg-video"
+      "file": "components/content-top.tpl",
+      "layout_name": "content-top",
+      "title": "content-top"
     },
     {
       "content_type": "component",
@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/content-top.tpl",
-      "layout_name": "content-top",
-      "title": "content-top"
+      "file": "components/bg-video.tpl",
+      "layout_name": "bg-video",
+      "title": "bg-video"
     },
     {
       "content_type": "component",
@@ -147,18 +147,6 @@
       "filename": "safari.svg"
     },
     {
-      "content_type": "application/x-wais-source",
-      "file": "assets/src",
-      "kind": "assets",
-      "filename": "src"
-    },
-    {
-      "content_type": "text/unknown",
-      "file": "images/.DS_Store",
-      "kind": "images",
-      "filename": ".DS_Store"
-    },
-    {
       "content_type": "image/png",
       "file": "images/chrome.png",
       "kind": "images",
@@ -214,9 +202,9 @@
     },
     {
       "content_type": "image/png",
-      "file": "images/github-logo.png",
+      "file": "images/logo.png",
       "kind": "images",
-      "filename": "github-logo.png"
+      "filename": "logo.png"
     },
     {
       "content_type": "image/png",
@@ -235,12 +223,6 @@
       "file": "images/safari.png",
       "kind": "images",
       "filename": "safari.png"
-    },
-    {
-      "content_type": "application/x-wais-source",
-      "file": "assets/src",
-      "kind": "assets",
-      "filename": "src"
     },
     {
       "content_type": "image/png",
@@ -273,18 +255,6 @@
       "filename": "modernizr.js"
     },
     {
-      "content_type": "application/javascript",
-      "file": "javascripts/modernizr.min.js",
-      "kind": "javascripts",
-      "filename": "modernizr.min.js"
-    },
-    {
-      "content_type": "application/x-wais-source",
-      "file": "assets/src",
-      "kind": "assets",
-      "filename": "src"
-    },
-    {
       "content_type": "text/css",
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
@@ -295,12 +265,6 @@
       "file": "stylesheets/main.min.css",
       "kind": "stylesheets",
       "filename": "main.min.css"
-    },
-    {
-      "content_type": "text/unknown",
-      "file": "stylesheets/scss",
-      "kind": "stylesheets",
-      "filename": "scss"
     }
   ]
 }

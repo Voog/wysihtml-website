@@ -32,20 +32,14 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    // Builds custom modernizr script.
-    modernizr: {
-      build: {
-        'devFile' : 'javascripts/src/modernizr.js',
-        'outputFile' : 'javascripts/modernizr.js',
-
-        'tests': [
-          'flexbox',
-          'svg'
-        ],
-
-        'uglify' : false
-      }
+    
+    modernizr_builder: {
+        build: {
+            options: {
+                features: 'flexbox,svg',
+                dest: 'javascripts/modernizr.js'
+            }
+        }
     },
 
     // Copys the standalone (not concatenated) javascript source files to the javascripts folder.
@@ -204,7 +198,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-bowercopy');
-  grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-modernizr-builder');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -217,7 +211,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-scss-lint');
 
-  grunt.registerTask('default', ['bowercopy', 'modernizr', 'copy', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
+  grunt.registerTask('default', ['bowercopy', 'modernizr_builder', 'copy', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
 
   grunt.event.on('watch', function(action, filepath, target) {
     if (target == 'voog') {
